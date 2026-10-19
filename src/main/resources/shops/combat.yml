@@ -1,0 +1,47 @@
+name: "Combat"
+icon: "DIAMOND_SWORD"
+description: "Weapons, armor, and combat equipment"
+
+items:
+  iron_sword:
+    material: "IRON_SWORD"
+    name: "Iron Sword"
+    buy_price: 150.0
+    sell_price: 35.0
+    description: "Reliable sharpened iron blade"
+  diamond_sword:
+    material: "DIAMOND_SWORD"
+    name: "Diamond Sword"
+    buy_price: 750.0
+    sell_price: 200.0
+    description: "Lethal diamond blade"
+  bow:
+    material: "BOW"
+    name: "Bow"
+    buy_price: 80.0
+    sell_price: 20.0
+    description: "Ranged hunting bow"
+  arrow:
+    material: "ARROW"
+    name: "Arrow"
+    buy_price: 5.0
+    sell_price: 1.0
+    description: "Pointed ammunition"
+  shield:
+    material: "SHIELD"
+    name: "Shield"
+    buy_price: 120.0
+    sell_price: 30.0
+    description: "Defensive blocking shield"
+  iron_chestplate:
+    material: "IRON_CHESTPLATE"
+    name: "Iron Chestplate"
+    buy_price: 350.0
+    sell_price: 80.0
+    description: "Sturdy iron cuirass"
+  diamond_chestplate:
+    material: "DIAMOND_CHESTPLATE"
+    name: "Diamond Chestplate"
+    buy_price: 2000.0
+    sell_price: 550.0
+    description: "Heavy diamond protective armor"

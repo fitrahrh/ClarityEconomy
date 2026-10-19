@@ -1,0 +1,154 @@
+prefix: "<gray>[<gold>経済</gold>]</gray> "
+
+general:
+  btn_confirm: "<green>確認</green>"
+  btn_cancel: "<red>キャンセル</red>"
+  btn_back: "<gray>戻る</gray>"
+  btn_close: "<red>閉じる</red>"
+
+market:
+  btn_buy: "<green>購入</green>"
+  btn_sell: "<gold>売却</gold>"
+  invalid_quantity: "<prefix><red>無効な数量です！正の整数を指定してください。</red>"
+  not_enough_money: "<prefix><red>所持金が足りません！必要額: <yellow>$<cost></yellow>, 残高: <yellow>$<balance></yellow>。</red>"
+  not_enough_items: "<prefix><red>インベントリ内のアイテムが不足しています！必要: <yellow><required></yellow>, 所持: <yellow><have></yellow>。</red>"
+  economy_unavailable: "<prefix><red>経済プラグイン (Vault) が現在サーバーで有効化されていません。</red>"
+  transaction_failed: "<prefix><red>取引を完了できませんでした。</red>"
+  buy_success: "<prefix><green><white><amount>個の <item></white> を <yellow>$<cost></yellow> で購入しました！ 新残高: <yellow>$<balance></yellow>。</green>"
+  sell_success: "<prefix><green><white><amount>個の <item></white> を <yellow>$<payout></yellow> で売却しました！ 新残高: <yellow>$<balance></yellow>。</green>"
+
+blackmarket:
+  closed: "<prefix><red>ブラックマーケットは現在閉鎖中です！</red>\n<gray>開催スケジュール: <yellow><schedule></yellow>\n次回開催まで: <aqua><remaining></aqua></gray>"
+  cooldown: "<prefix><red>ブラックマーケットで再取引を行うには、あと <yellow><seconds>秒</yellow> お待ちください。</red>"
+
+auction:
+  closed: "<prefix><red>日替わりオークションアリーナは現在閉鎖中です！</red>\n<gray>開催日程: <yellow><schedule></yellow>\n次回セッションまで: <aqua><remaining></aqua></gray>"
+  location_not_set: "<prefix><red>オークションアリーナの座標がまだ管理者によって設定されていません。</red>"
+  teleport_success: "<prefix><green>日替わりオークションアリーナへテレポートしています...</green>"
+  teleport_failed: "<prefix><red>オークションアリーナへのテレポートに失敗しました。</red>"
+  location_saved: "<prefix><green>オークションアリーナの位置を <yellow><world></yellow> (<white><x>, <y>, <z></white>) に保存しました。</green>"
+
+promosi:
+  queue_full: "<prefix><red>広告枠（全 <yellow><max></yellow> 枠）が現在満杯です！後ほどお試しください。</red>"
+  cooldown: "<prefix><red>広告プロモーションのクールダウン中です！再申請可能まで: <yellow><time></yellow>。</red>"
+  not_enough_money: "<prefix><red>広告枠のレンタルには <yellow>$<cost></yellow> が必要です！残高: <yellow>$<balance></yellow>。</red>"
+  empty_message: "<prefix><red>広告メッセージを空白にすることはできません！</red>"
+  success: "<prefix><green>広告が <yellow>$<cost></yellow> で受理されました！<white><duration> 分間</white> 定期放送されます。次回クールダウン: <white><cooldown> 時間</white>。</green>"
+  broadcast_format: "<gold>----------------------------------------</gold>\n<yellow><bold>[サーバー自動告知広告]</bold></yellow>\n<white><message></white>\n<gray>広告主: <yellow><player></yellow> | 連絡先: <yellow>/msg <player></yellow></gray>\n<gold>----------------------------------------</gold>"
+
+wtb:
+  broadcast: "<red><bold>ℹ <player> (<tag>)</bold></red>\n<white><player> が求めています</white>\n<white>希望アイテム: <red><item></red></white>\n<gray>→</gray> 心当たりがある方は <red>/msg <player></red>"
+wts:
+  broadcast: "<red><bold>ℹ <player> (<tag>)</bold></red>\n<white><player> が販売しています</white>\n<white>販売アイテム: <red><item></red></white>\n<gray>→</gray> 購入希望の方は <red>/msg <player></red>"
+wta:
+  broadcast: "<red><bold>ℹ <player> (<tag>)</bold></red>\n<white><player> が質問しています</white>\n<white>内容 / アイテム: <red><item></red></white>\n<gray>→</gray> 詳しい方は <red>/msg <player></red>"
+
+jobs:
+  level_up: "<prefix><green>おめでとうございます！職業 <white><job></white> が <yellow>レベル <level></yellow> に到達しました！</green>"
+  max_level_reached: "<prefix><gold><bold>最大レベル達成！</bold> あなたは <white><job></white> を極めました！常時バフ発動: <yellow><buff></yellow>。</gold>"
+  already_has_job: "<prefix><red>あなたは既に <yellow><job></yellow> として就職しています！</red>"
+  not_enough_money: "<prefix><red>職業変更には <yellow>$<cost></yellow> が必要です！残高: <yellow>$<balance></yellow>。</red>"
+  job_changed: "<prefix><green>職業を <white><job></white> に変更しました！変更手数料: <yellow>$<cost></yellow>。</green>"
+  btn_select_job: "<green>この職業に就く</green>"
+  btn_choose_now: "<green>今すぐ職業を選ぶ</green>"
+  btn_change_job: "<gold>職業を変更する</gold>"
+  btn_guide: "<yellow>職業ガイド＆ヒント</yellow>"
+  btn_main_menu: "<aqua>メインメニューへ戻る</aqua>"
+
+command:
+  admin:
+    reloaded: "<prefix><green>設定ファイル、ショップ、ブラックマーケット、言語バンドルを再読み込みしました。</green>"
+
+job:
+  hunter:
+    name: "ハンター"
+    description: "モンスターや敵対モブを討伐することでEXPとお金を獲得します。"
+  farmer:
+    name: "農家"
+    description: "作物の栽培や収穫を行うことでEXPとお金を獲得します。"
+  miner:
+    name: "鉱夫"
+    description: "鉱石や貴重な鉱物を採掘することでEXPとお金を獲得します。"
+  fisherman:
+    name: "漁師"
+    description: "魚や水中の宝物を釣り上げることでEXPとお金を獲得します。"
+  explorer:
+    name: "冒険家"
+    description: "徒歩、水泳、騎乗での移動や土地開拓でEXPとお金を獲得します。"
+  breeder:
+    name: "繁殖家"
+    description: "家畜や動物を繁殖させることでEXPとお金を獲得します。"
+  blacksmith:
+    name: "鍛冶屋"
+    description: "金属の製錬や防具・ツールの作成でEXPとお金を獲得します。"
+  alchemist:
+    name: "錬金術師"
+    description: "魔法のポーションを調合・醸造することでEXPとお金を獲得します。"
+  lumberjack:
+    name: "木こり"
+    description: "木を伐採して原木を集めることでEXPとお金を獲得します。"
+  digger:
+    name: "掘削士"
+    description: "土、砂、粘土、砂利などを掘削することでEXPとお金を獲得します。"
+
+dialog:
+  general:
+    btn_confirm: "<green>確認</green>"
+    btn_cancel: "<red>キャンセル</red>"
+    btn_back: "<gray>戻る</gray>"
+    btn_close: "<red>閉じる</red>"
+  market:
+    title: "<white>マーケット</white>"
+    body: "<gray>公式マーケットへようこそ。下のカテゴリーを選択して商品をご覧ください。</gray>\n<gray>所持金残高: <yellow>$<balance></yellow></gray>"
+  category:
+    title: "<white><category></white>"
+    body: "<gray><yellow><category></yellow> カタログからアイテムを選択して売買を行えます。</gray>\n<gray>所持金残高: <yellow>$<balance></yellow></gray>"
+  item_action:
+    title: "<white><item></white>"
+    body: "<gray>アイテム: <white><item></white></gray>\n<gray>購入価格: <green>$<buy_price></green></gray>\n<gray>売却価格: <gold>$<sell_price></gold></gray>\n<gray>所持数: <yellow><inv_count></yellow></gray>\n<gray>残高: <yellow>$<balance></yellow></gray>"
+  buy_input:
+    title: "<white><item> の購入</white>"
+    body: "<gray>購入したい <white><item></white> の数量を入力してください。</gray>\n<gray>単価: <green>$<unit_price></green> | 残高: <yellow>$<balance></yellow></gray>"
+  buy_confirm:
+    title: "<white>購入の確認</white>"
+    body: "<gray>本当に <white><amount>個の <item></white> を <yellow>$<cost></yellow> で購入しますか？</gray>\n<gray>所持金残高: <yellow>$<balance></yellow></gray>"
+  sell_input:
+    title: "<white><item> の売却</white>"
+    body: "<gray>売却したい <white><item></white> の数量を入力してください。</gray>\n<gray>売却単価: <gold>$<unit_payout></gold> | 所持数: <yellow><inv_count></yellow></gray>"
+  sell_confirm:
+    title: "<white>売却の確認</white>"
+    body: "<gray>本当に <white><amount>個の <item></white> を <yellow>$<payout></yellow> で売却しますか？</gray>\n<gray>所持金残高: <yellow>$<balance></yellow></gray>"
+  input:
+    quantity_label: "<gray>数量:</gray>"
+    promo_label: "<gray>広告メッセージ:</gray>"
+  blackmarket:
+    title: "<white>ブラックマーケット</white>"
+    closed_title: "<white>ブラックマーケット閉鎖中</white>"
+    body: "<red>秘密のブラックマーケットへようこそ。全品 <yellow><discount></yellow> 割引中！</red>\n<gray>今セッションの残り時間: <aqua><remaining></aqua></gray>\n<gray>所持金残高: <yellow>$<balance></yellow></gray>\n<dark_gray>注意: 取引中は移動できません。</dark_gray>"
+  promosi:
+    title: "<white>広告プロモーション</white>"
+    body: "<gray>全サーバー自動告知広告枠をレンタルします。</gray>\n<gray>費用: <yellow>$<cost></yellow> | 放送時間: <yellow><duration> 分</yellow></gray>\n<gray>使用中枠: <yellow><active_count>/<max_slots></yellow> | 残高: <yellow>$<balance></yellow></gray>"
+  jobs:
+    title: "<white>職業</white>"
+    no_job_title: "<white>職業</white>"
+    no_job_body: "<white>現在、職業に就いていません。</white>\n\n<gray>職業システムでは、日々の活動（採掘・伐採・戦闘など）に応じて <yellow>お金</yellow> と <aqua>職業EXP</aqua> を手軽に稼ぐことができます。</gray>\n\n<gray>主なメリット・特徴:</gray>\n<gray>• プレイスタイルに合わせた <white>全10種類の職業</white>。</gray>\n<gray>• レベル50到達で <green>永続パッシブバフ</green> 解放！</gray>\n<gray>• 周囲10ブロックの味方にも恩恵を与える <aqua>オーラバフ</aqua>。</gray>\n\n<dark_gray>下のボタンから最初の職業を選ぶか、ガイドをご確認ください。</dark_gray>"
+    body: "<white>現在の職業情報:</white>\n\n<gray>職業: <yellow><job></yellow></gray>\n<gray>レベル: <white><level></white><gray>/<max_level></gray> | EXP: <aqua><exp></aqua><gray>/<req_exp></gray> (<green><exp_percent>%</green>)</gray>\n\n<gray>自己バフ (Lv 50): <green><self_buff></green></gray>\n<gray>周囲オーラバフ: <aqua><aura_buff></aqua></gray>\n\n<dark_gray>注意: 職業変更には $<reset_cost> が必要で、レベルは1にリセットされます。</dark_gray>"
+    select_title: "<white>職業の選択</white>"
+    select_body: "<gray>下の10種類の職業から詳細を確認して選択してください。</gray>"
+    btn_choose_now: "<green>今すぐ職業を選ぶ</green>"
+    btn_change_job: "<gold>職業を変更する</gold>"
+    btn_guide: "<yellow>職業ガイド＆ヒント</yellow>"
+    btn_main_menu: "<aqua>メインメニューへ戻る</aqua>"
+    btn_select_job: "<green>この職業に就く</green>"
+  jobs_guide:
+    title: "<white>職業ガイド</white>"
+    body: "<white>職業システム総合ガイド:</white>\n\n<yellow>1. EXPとお金の獲得方法</yellow>\n<gray>選んだ職業に合った行動（鉱夫なら採掘、木こりなら伐採など）を行うと、直接所持金に <yellow>お金</yellow> が加算され、同時に <aqua>職業EXP</aqua> が入ります。</gray>\n\n<yellow>2. レベル上限と進行</yellow>\n<gray>各職業の最高レベルは <white>レベル50</white> です。高レベルになるほど1回あたりの獲得金額が増加します。</gray>\n\n<yellow>3. レベル50到達特典 (極意バフ)</yellow>\n<gray>レベル50に到達すると、自身への <green>永続パッシブバフ</green> と、周囲10ブロック以内の他プレイヤーに効果を共有する <aqua>オーラバフ</aqua> が解放されます。</gray>\n\n<yellow>4. 職業の変更</yellow>\n<gray>変更手数料 <yellow>$<reset_cost></yellow> を支払うことでいつでも転職可能ですが、新しい職業はレベル1からのスタートになります。</gray>"
+    btn_all_jobs: "<yellow>全10種の職業とバフ一覧</yellow>"
+    list_title: "<white>職業一覧</white>"
+    list_body: "<gray>職業を選択すると、詳しい対象行動やLv50バフを確認できます:</gray>"
+  job_details:
+    title: "<white><job></white>"
+    body: "<white>職業: <yellow><job></yellow></white>\n<gray><description></gray>\n\n<white>最高レベル特典 (Lv 50):</white>\n<gray>• 自身へのバフ: <green><self_buff></green></gray>\n<gray>• 周囲へのオーラバフ: <aqua><aura_buff></aqua></gray>\n\n<white>就職・変更条件:</white>\n<gray>• 手数料: <yellow>$<cost></yellow></gray>\n<gray>• 所持金残高: <yellow>$<balance></yellow></gray>\n\n<dark_gray>注意: 転職するとレベルは1にリセットされます。</dark_gray>"
+  job_confirm:
+    title: "<white>職業変更の確認</white>"
+    body: "<red>警告: <white><job></white> への変更には <yellow>$<cost></yellow> がかかり、レベルが1にリセットされます！</red>\n\n<gray>本当に変更しますか？</gray>"

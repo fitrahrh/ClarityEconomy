@@ -1,0 +1,59 @@
+name: "Mining"
+icon: "DIAMOND_PICKAXE"
+description: "Ores, minerals, gems, and mined resources"
+
+items:
+  coal:
+    material: "COAL"
+    name: "Coal"
+    buy_price: 15.0
+    sell_price: 5.0
+    description: "Standard fossil fuel"
+  raw_copper:
+    material: "RAW_COPPER"
+    name: "Raw Copper"
+    buy_price: 12.0
+    sell_price: 4.0
+    description: "Unprocessed copper chunks"
+  raw_iron:
+    material: "RAW_IRON"
+    name: "Raw Iron"
+    buy_price: 25.0
+    sell_price: 8.0
+    description: "Unrefined iron ore"
+  raw_gold:
+    material: "RAW_GOLD"
+    name: "Raw Gold"
+    buy_price: 50.0
+    sell_price: 18.0
+    description: "Precious gold ore"
+  redstone:
+    material: "REDSTONE"
+    name: "Redstone Dust"
+    buy_price: 20.0
+    sell_price: 6.0
+    description: "Conductive red dust"
+  lapis_lazuli:
+    material: "LAPIS_LAZULI"
+    name: "Lapis Lazuli"
+    buy_price: 20.0
+    sell_price: 6.0
+    description: "Magical blue dye gem"
+  diamond:
+    material: "DIAMOND"
+    name: "Diamond"
+    buy_price: 250.0
+    sell_price: 80.0
+    description: "Hard sparkling gemstone"
+  emerald:
+    material: "EMERALD"
+    name: "Emerald"
+    buy_price: 300.0
+    sell_price: 100.0
+    description: "Villager currency gem"
+  amethyst_shard:
+    material: "AMETHYST_SHARD"
+    name: "Amethyst Shard"
+    buy_price: 30.0
+    sell_price: 10.0
+    description: "Resonating crystal shard"

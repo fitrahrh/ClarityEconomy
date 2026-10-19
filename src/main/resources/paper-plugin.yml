@@ -1,0 +1,49 @@
+name: ClarityEconomy
+version: '${version}'
+main: com.harukiyu.clarityeconomy.ClarityEconomy
+api-version: '1.21'
+description: Comprehensive Economy Plugin for Paper 26.3 with Legal Market, Black Market, Daily Auction, Promotions & Jobs System
+authors: [Harukiyu]
+dependencies:
+  server:
+    ClarityLangCore:
+      load: BEFORE
+      required: false
+    Vault:
+      load: BEFORE
+      required: false
+    PlaceholderAPI:
+      load: BEFORE
+      required: false
+    floodgate:
+      load: BEFORE
+      required: false
+    Geyser-Spigot:
+      load: BEFORE
+      required: false
+
+permissions:
+  clarityeconomy.use:
+    description: Allows using basic economy commands
+    default: true
+  clarityeconomy.admin:
+    description: Allows administrative commands like /ce reload and /auction set
+    default: op
+  clarityeconomy.market:
+    description: Allows opening the legal market
+    default: true
+  clarityeconomy.blackmarket:
+    description: Allows accessing the black market
+    default: true
+  clarityeconomy.lelang:
+    description: Allows teleporting to the daily auction arena
+    default: true
+  clarityeconomy.promosi:
+    description: Allows renting broadcast advertisement slots
+    default: true
+  clarityeconomy.jobs:
+    description: Allows opening the jobs menu and earning job exp
+    default: true
+  clarityeconomy.wtb:
+    description: Allows using /wtb, /wts, and /wta commands
+    default: true

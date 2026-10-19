@@ -1,0 +1,59 @@
+name: "Mob Drops"
+icon: "ROTTEN_FLESH"
+description: "Monster trophies, body parts, and mob drops"
+
+items:
+  rotten_flesh:
+    material: "ROTTEN_FLESH"
+    name: "Rotten Flesh"
+    buy_price: 6.0
+    sell_price: 1.5
+    description: "Decaying zombie flesh"
+  bone:
+    material: "BONE"
+    name: "Bone"
+    buy_price: 10.0
+    sell_price: 3.0
+    description: "Skeletal bone fragment"
+  string:
+    material: "STRING"
+    name: "String"
+    buy_price: 12.0
+    sell_price: 3.5
+    description: "Fibrous spider web thread"
+  spider_eye:
+    material: "SPIDER_EYE"
+    name: "Spider Eye"
+    buy_price: 20.0
+    sell_price: 6.0
+    description: "Venomous arachnid eye"
+  gunpowder:
+    material: "GUNPOWDER"
+    name: "Gunpowder"
+    buy_price: 35.0
+    sell_price: 12.0
+    description: "Volatile creeper explosive powder"
+  ender_pearl:
+    material: "ENDER_PEARL"
+    name: "Ender Pearl"
+    buy_price: 120.0
+    sell_price: 40.0
+    description: "Spatial teleportation orb"
+  blaze_rod:
+    material: "BLAZE_ROD"
+    name: "Blaze Rod"
+    buy_price: 150.0
+    sell_price: 50.0
+    description: "Incandescent fiery core rod"
+  ghast_tear:
+    material: "GHAST_TEAR"
+    name: "Ghast Tear"
+    buy_price: 350.0
+    sell_price: 120.0
+    description: "Melancholic Nether spirit tear"
+  slime_ball:
+    material: "SLIME_BALL"
+    name: "Slimeball"
+    buy_price: 40.0
+    sell_price: 15.0
+    description: "Viscous green bouncy slime"

@@ -1,0 +1,154 @@
+prefix: "<gray>[<gold>Wirtschaft</gold>]</gray> "
+
+general:
+  btn_confirm: "<green>Bestätigen</green>"
+  btn_cancel: "<red>Abbrechen</red>"
+  btn_back: "<gray>Zurück</gray>"
+  btn_close: "<red>Schließen</red>"
+
+market:
+  btn_buy: "<green>Kaufen</green>"
+  btn_sell: "<gold>Verkaufen</gold>"
+  invalid_quantity: "<prefix><red>Ungültige Menge angegeben! Muss eine positive ganze Zahl sein.</red>"
+  not_enough_money: "<prefix><red>Du hast nicht genug Geld! Benötigt: <yellow>$<cost></yellow>, Guthaben: <yellow>$<balance></yellow>.</red>"
+  not_enough_items: "<prefix><red>Du hast nicht genug Gegenstände im Inventar! Benötigt: <yellow><required></yellow>, Vorhanden: <yellow><have></yellow>.</red>"
+  economy_unavailable: "<prefix><red>Der Wirtschaftsanbieter (Vault) ist auf diesem Server derzeit nicht aktiv.</red>"
+  transaction_failed: "<prefix><red>Die Transaktion konnte nicht abgeschlossen werden.</red>"
+  buy_success: "<prefix><green>Erfolgreich <white><amount>x <item></white> für <yellow>$<cost></yellow> gekauft! Neues Guthaben: <yellow>$<balance></yellow>.</green>"
+  sell_success: "<prefix><green>Erfolgreich <white><amount>x <item></white> für <yellow>$<payout></yellow> verkauft! Neues Guthaben: <yellow>$<balance></yellow>.</green>"
+
+blackmarket:
+  closed: "<prefix><red>Der Schwarzmarkt ist derzeit geschlossen!</red>\n<gray>Öffnungszeiten: <yellow><schedule></yellow>\nNächste Öffnung in: <aqua><remaining></aqua></gray>"
+  cooldown: "<prefix><red>Du musst <yellow><seconds>s</yellow> warten, bevor du erneut auf dem Schwarzmarkt handeln kannst.</red>"
+
+auction:
+  closed: "<prefix><red>Die tägliche Auktionsarena ist derzeit geschlossen!</red>\n<gray>Zeitplan: <yellow><schedule></yellow>\nNächste Sitzung in: <aqua><remaining></aqua></gray>"
+  location_not_set: "<prefix><red>Der Standort der Auktionsarena wurde noch nicht von einem Administrator festgelegt.</red>"
+  teleport_success: "<prefix><green>Teleportiere zur täglichen Auktionsarena...</green>"
+  teleport_failed: "<prefix><red>Teleportation zur Auktionsarena fehlgeschlagen.</red>"
+  location_saved: "<prefix><green>Standort der Auktionsarena gespeichert in <yellow><world></yellow> (<white><x>, <y>, <z></white>).</green>"
+
+promosi:
+  queue_full: "<prefix><red>Alle <yellow><max></yellow> Werbeslots sind derzeit belegt! Bitte versuche es später erneut.</red>"
+  cooldown: "<prefix><red>Du hast noch eine Werbe-Abklingzeit! Erneut möglich in <yellow><time></yellow>.</red>"
+  not_enough_money: "<prefix><red>Du benötigst <yellow>$<cost></yellow> für einen Werbeslot! Dein Guthaben: <yellow>$<balance></yellow>.</red>"
+  empty_message: "<prefix><red>Deine Werbenachricht darf nicht leer sein!</red>"
+  success: "<prefix><green>Deine Werbung wurde für <yellow>$<cost></yellow> gebucht! Sie wird für <white><duration> Minuten</white> übertragen. Abklingzeit: <white><cooldown> Stunden</white>.</green>"
+  broadcast_format: "<gold>----------------------------------------</gold>\n<yellow><bold>[SERVERWERBUNG]</bold></yellow>\n<white><message></white>\n<gray>Gesponsert von: <yellow><player></yellow> | Kontakt: <yellow>/msg <player></yellow></gray>\n<gold>----------------------------------------</gold>"
+
+wtb:
+  broadcast: "<red><bold>ℹ <player> (<tag>)</bold></red>\n<white><player> sucht aktuell</white>\n<white>Gegenstand: <red><item></red></white>\n<gray>→</gray> <red>/msg <player></red> <white>bei Interesse</white>"
+wts:
+  broadcast: "<red><bold>ℹ <player> (<tag>)</bold></red>\n<white><player> verkauft aktuell</white>\n<white>Gegenstand: <red><item></red></white>\n<gray>→</gray> <red>/msg <player></red> <white>bei Interesse</white>"
+wta:
+  broadcast: "<red><bold>ℹ <player> (<tag>)</bold></red>\n<white><player> fragt nach</white>\n<white>Thema / Gegenstand: <red><item></red></white>\n<gray>→</gray> <red>/msg <player></red> <white>bei Auskunft</white>"
+
+jobs:
+  level_up: "<prefix><green>Glückwunsch! Dein Beruf <white><job></white> hat <yellow>Stufe <level></yellow> erreicht!</green>"
+  max_level_reached: "<prefix><gold><bold>MAXIMALSTUFE ERREICHT!</bold> Du hast <white><job></white> gemeistert! Permanenter Buff aktiv: <yellow><buff></yellow>.</gold>"
+  already_has_job: "<prefix><red>Du arbeitest bereits als <yellow><job></yellow>!</red>"
+  not_enough_money: "<prefix><red>Du benötigst <yellow>$<cost></yellow> zum Wechseln des Berufs! Dein Guthaben: <yellow>$<balance></yellow>.</red>"
+  job_changed: "<prefix><green>Du bist zum Beruf <white><job></white> gewechselt! Wechselgebühr: <yellow>$<cost></yellow>.</green>"
+  btn_select_job: "<green>Diesen Beruf wählen</green>"
+  btn_choose_now: "<green>Beruf jetzt wählen</green>"
+  btn_change_job: "<gold>Beruf wechseln</gold>"
+  btn_guide: "<yellow>Berufsratgeber & Tipps</yellow>"
+  btn_main_menu: "<aqua>Zurück zum Hauptmenü</aqua>"
+
+command:
+  admin:
+    reloaded: "<prefix><green>Konfiguration, Shops, Schwarzmarkt und Sprachpakete erfolgreich neu geladen.</green>"
+
+job:
+  hunter:
+    name: "Jäger"
+    description: "Verdiene XP & Geld durch das Töten feindlicher Monster."
+  farmer:
+    name: "Bauer"
+    description: "Verdiene XP & Geld durch Anbau und Ernte von Feldfrüchten."
+  miner:
+    name: "Bergarbeiter"
+    description: "Verdiene XP & Geld durch das Abbauen wertvoller Erze."
+  fisherman:
+    name: "Angler"
+    description: "Verdiene XP & Geld durch Fische und Schätze aus Gewässern."
+  explorer:
+    name: "Entdecker"
+    description: "Verdiene XP & Geld durch Erkundung zu Fuß, im Wasser und auf Tieren."
+  breeder:
+    name: "Züchter"
+    description: "Verdiene XP & Geld durch Züchten von Nutztieren."
+  blacksmith:
+    name: "Schmied"
+    description: "Verdiene XP & Geld durch Schmelzen von Metallen und Schmieden von Rüstung."
+  alchemist:
+    name: "Alchemist"
+    description: "Verdiene XP & Geld durch Brauen magischer Tränke."
+  lumberjack:
+    name: "Holzfäller"
+    description: "Verdiene XP & Geld durch Fällen von Bäumen und Holz."
+  digger:
+    name: "Gräber"
+    description: "Verdiene XP & Geld durch Ausgraben von Erde, Sand, Ton und Kies."
+
+dialog:
+  general:
+    btn_confirm: "<green>Bestätigen</green>"
+    btn_cancel: "<red>Abbrechen</red>"
+    btn_back: "<gray>Zurück</gray>"
+    btn_close: "<red>Schließen</red>"
+  market:
+    title: "<white>Markt</white>"
+    body: "<gray>Willkommen auf dem offiziellen Markt. Wähle unten eine Kategorie, um Gegenstände zu durchstöbern.</gray>\n<gray>Dein Guthaben: <yellow>$<balance></yellow></gray>"
+  category:
+    title: "<white><category></white>"
+    body: "<gray>Wähle einen Gegenstand aus dem Katalog <yellow><category></yellow> zum Kaufen oder Verkaufen.</gray>\n<gray>Dein Guthaben: <yellow>$<balance></yellow></gray>"
+  item_action:
+    title: "<white><item></white>"
+    body: "<gray>Gegenstand: <white><item></white></gray>\n<gray>Kaufpreis: <green>$<buy_price></green></gray>\n<gray>Verkaufspreis: <gold>$<sell_price></gold></gray>\n<gray>Im Inventar: <yellow><inv_count></yellow></gray>\n<gray>Guthaben: <yellow>$<balance></yellow></gray>"
+  buy_input:
+    title: "<white><item> kaufen</white>"
+    body: "<gray>Gib die gewünschte Kaufmenge für <white><item></white> ein.</gray>\n<gray>Stückpreis: <green>$<unit_price></green> | Guthaben: <yellow>$<balance></yellow></gray>"
+  buy_confirm:
+    title: "<white>Kauf bestätigen</white>"
+    body: "<gray>Möchtest du wirklich <white><amount>x <item></white> für <yellow>$<cost></yellow> kaufen?</gray>\n<gray>Dein Guthaben: <yellow>$<balance></yellow></gray>"
+  sell_input:
+    title: "<white><item> verkaufen</white>"
+    body: "<gray>Gib die gewünschte Verkaufsmenge für <white><item></white> ein.</gray>\n<gray>Stückauszahlung: <gold>$<unit_payout></gold> | Im Inventar: <yellow><inv_count></yellow></gray>"
+  sell_confirm:
+    title: "<white>Verkauf bestätigen</white>"
+    body: "<gray>Möchtest du wirklich <white><amount>x <item></white> für <yellow>$<payout></yellow> verkaufen?</gray>\n<gray>Dein Guthaben: <yellow>$<balance></yellow></gray>"
+  input:
+    quantity_label: "<gray>Menge:</gray>"
+    promo_label: "<gray>Werbenachricht:</gray>"
+  blackmarket:
+    title: "<white>Schwarzmarkt</white>"
+    closed_title: "<white>Schwarzmarkt Geschlossen</white>"
+    body: "<red>Willkommen auf dem Schwarzmarkt. Alle Gegenstände sind um <yellow><discount></yellow> reduziert!</red>\n<gray>Verbleibende Zeit dieser Sitzung: <aqua><remaining></aqua></gray>\n<gray>Dein Guthaben: <yellow>$<balance></yellow></gray>\n<dark_gray>Hinweis: Während der Transaktion kannst du dich nicht bewegen.</dark_gray>"
+  promosi:
+    title: "<white>Werbung</white>"
+    body: "<gray>Miete einen automatisierten serverweiten Werbeslot.</gray>\n<gray>Kosten: <yellow>$<cost></yellow> | Sendedauer: <yellow><duration> Minuten</yellow></gray>\n<gray>Aktive Slots: <yellow><active_count>/<max_slots></yellow> | Guthaben: <yellow>$<balance></yellow></gray>"
+  jobs:
+    title: "<white>Berufe</white>"
+    no_job_title: "<white>Berufe</white>"
+    no_job_body: "<white>Du hast derzeit noch keinen aktiven Beruf gewählt.</white>\n\n<gray>Berufe belohnen dich bei jeder passenden Tätigkeit mit <yellow>Geld</yellow> und <aqua>Berufs-XP</aqua>.</gray>\n\n<gray>Vorteile & Funktionen:</gray>\n<gray>• <white>10 einzigartige Berufe</white> passend zu deinem Spielstil.</gray>\n<gray>• <green>Permanenter Eigenbuff</green> ab Stufe 50.</gray>\n<gray>• <aqua>Aura-Buff</aqua> für Verbündete in 10 Blöcken Umkreis.</gray>\n\n<dark_gray>Wähle unten deinen Beruf oder lies den Ratgeber.</dark_gray>"
+    body: "<white>Deine Berufsübersicht:</white>\n\n<gray>Beruf: <yellow><job></yellow></gray>\n<gray>Stufe: <white><level></white><gray>/<max_level></gray> | EXP: <aqua><exp></aqua><gray>/<req_exp></gray> (<green><exp_percent>%</green>)</gray>\n\n<gray>Eigenbuff (Stufe 50): <green><self_buff></green></gray>\n<gray>Umgebungs-Aura: <aqua><aura_buff></aqua></gray>\n\n<dark_gray>Hinweis: Berufswechsel kostet $<reset_cost> und setzt Stufe auf 1 zurück.</dark_gray>"
+    select_title: "<white>Beruf wählen</white>"
+    select_body: "<gray>Wähle einen der 10 Berufe unten, um Details anzuzeigen oder zu wechseln.</gray>"
+    btn_choose_now: "<green>Beruf jetzt wählen</green>"
+    btn_change_job: "<gold>Beruf wechseln</gold>"
+    btn_guide: "<yellow>Berufsratgeber & Tipps</yellow>"
+    btn_main_menu: "<aqua>Zurück zum Hauptmenü</aqua>"
+    btn_select_job: "<green>Diesen Beruf wählen</green>"
+  jobs_guide:
+    title: "<white>Berufsratgeber</white>"
+    body: "<white>Anleitung zum Berufssystem:</white>\n\n<yellow>1. EXP & Geld verdienen</yellow>\n<gray>Jede berufsspezifische Aktion (wie Erze abbauen als Bergarbeiter, Holz fällen als Holzfäller etc.) bringt direkt <yellow>Geld</yellow> und <aqua>Berufs-EXP</aqua>.</gray>\n\n<yellow>2. Stufenaufstieg</yellow>\n<gray>Die Maximalstufe beträgt <white>Stufe 50</white>. Höhere Stufen steigern die Erträge pro Tätigkeit.</gray>\n\n<yellow>3. Meister-Buffs (Stufe 50)</yellow>\n<gray>Auf Stufe 50 schaltest du einen mächtigen <green>permanenten Eigenbuff</green> frei sowie eine <aqua>Aura</aqua>, die Mitspieler im Umkreis von 10 Blöcken stärkt.</gray>\n\n<yellow>4. Beruf wechseln</yellow>\n<gray>Du kannst jederzeit für <yellow>$<reset_cost></yellow> wechseln. Die neue Stufe beginnt dabei wieder bei Stufe 1.</gray>"
+    btn_all_jobs: "<yellow>Alle 10 Berufe & Buffs ansehen</yellow>"
+    list_title: "<white>Berufsübersicht</white>"
+    list_body: "<gray>Wähle einen Beruf, um Details zu Aufgaben und Buffs zu sehen:</gray>"
+  job_details:
+    title: "<white><job></white>"
+    body: "<white>Beruf: <yellow><job></yellow></white>\n<gray><description></gray>\n\n<white>Belohnungen bei Maximalstufe (Stufe 50):</white>\n<gray>• Eigenbuff: <green><self_buff></green></gray>\n<gray>• Umgebungs-Aura: <aqua><aura_buff></aqua></gray>\n\n<white>Wechselbedingungen:</white>\n<gray>• Wechselgebühr: <yellow>$<cost></yellow></gray>\n<gray>• Dein Guthaben: <yellow>$<balance></yellow></gray>\n\n<dark_gray>Hinweis: Berufswechsel setzt Stufe auf 1 zurück.</dark_gray>"
+  job_confirm:
+    title: "<white>Berufswechsel bestätigen</white>"
+    body: "<red>Warnung: Wechsel zu <white><job></white> kostet <yellow>$<cost></yellow> und setzt deine Stufe auf 1 ZURÜCK!</red>\n\n<gray>Möchtest du fortfahren?</gray>"

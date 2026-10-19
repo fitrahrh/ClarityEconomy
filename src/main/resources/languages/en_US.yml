@@ -1,0 +1,154 @@
+prefix: "<gray>[<gold>Economy</gold>]</gray> "
+
+general:
+  btn_confirm: "<green>Confirm</green>"
+  btn_cancel: "<red>Cancel</red>"
+  btn_back: "<gray>Back</gray>"
+  btn_close: "<red>Close</red>"
+
+market:
+  btn_buy: "<green>Buy</green>"
+  btn_sell: "<gold>Sell</gold>"
+  invalid_quantity: "<prefix><red>Invalid amount specified! Must be a positive whole number.</red>"
+  not_enough_money: "<prefix><red>You do not have enough money! Required: <yellow>$<cost></yellow>, Balance: <yellow>$<balance></yellow>.</red>"
+  not_enough_items: "<prefix><red>You do not have enough items in your inventory! Need: <yellow><required></yellow>, Have: <yellow><have></yellow>.</red>"
+  economy_unavailable: "<prefix><red>Economy provider (Vault) is not currently active on this server.</red>"
+  transaction_failed: "<prefix><red>Transaction could not be completed at this time.</red>"
+  buy_success: "<prefix><green>Successfully bought <white><amount>x <item></white> for <yellow>$<cost></yellow>! New balance: <yellow>$<balance></yellow>.</green>"
+  sell_success: "<prefix><green>Successfully sold <white><amount>x <item></white> for <yellow>$<payout></yellow>! New balance: <yellow>$<balance></yellow>.</green>"
+
+blackmarket:
+  closed: "<prefix><red>The Black Market is currently closed!</red>\n<gray>Operational Schedule: <yellow><schedule></yellow>\nNext Opening in: <aqua><remaining></aqua></gray>"
+  cooldown: "<prefix><red>You must wait <yellow><seconds>s</yellow> before transacting in the Black Market again.</red>"
+
+auction:
+  closed: "<prefix><red>The Daily Auction Arena is currently closed!</red>\n<gray>Schedules: <yellow><schedule></yellow>\nNext Session in: <aqua><remaining></aqua></gray>"
+  location_not_set: "<prefix><red>The auction arena location has not been configured by an administrator yet.</red>"
+  teleport_success: "<prefix><green>Teleporting to the Daily Auction Arena...</green>"
+  teleport_failed: "<prefix><red>Failed to teleport to the auction arena.</red>"
+  location_saved: "<prefix><green>Auction arena location set to <yellow><world></yellow> (<white><x>, <y>, <z></white>).</green>"
+
+promosi:
+  queue_full: "<prefix><red>All <yellow><max></yellow> broadcast slots are currently occupied! Please try again later.</red>"
+  cooldown: "<prefix><red>You are on promotion cooldown! You can submit again in <yellow><time></yellow>.</red>"
+  not_enough_money: "<prefix><red>You need <yellow>$<cost></yellow> to rent a broadcast slot! Your balance: <yellow>$<balance></yellow>.</red>"
+  empty_message: "<prefix><red>Your advertisement message cannot be empty!</red>"
+  success: "<prefix><green>Your advertisement was accepted for <yellow>$<cost></yellow>! It will broadcast periodically for <white><duration> minutes</white>. Cooldown: <white><cooldown> hours</white>.</green>"
+  broadcast_format: "<gold>----------------------------------------</gold>\n<yellow><bold>[COMMERCIAL ADVERTISEMENT]</bold></yellow>\n<white><message></white>\n<gray>Sponsored by: <yellow><player></yellow> | Contact: <yellow>/msg <player></yellow></gray>\n<gold>----------------------------------------</gold>"
+
+wtb:
+  broadcast: "<red><bold>ℹ <player> (<tag>)</bold></red>\n<white><player> currently <action></white>\n<white>Specific Item: <red><item></red></white>\n<gray>→</gray> <red>/msg <player></red> <white>if interested</white>"
+wts:
+  broadcast: "<red><bold>ℹ <player> (<tag>)</bold></red>\n<white><player> currently <action></white>\n<white>Specific Item: <red><item></red></white>\n<gray>→</gray> <red>/msg <player></red> <white>if interested</white>"
+wta:
+  broadcast: "<red><bold>ℹ <player> (<tag>)</bold></red>\n<white><player> currently <action></white>\n<white>Topic / Inquiry: <red><item></red></white>\n<gray>→</gray> <red>/msg <player></red> <white>if interested</white>"
+
+jobs:
+  level_up: "<prefix><green>Congratulations! Your <white><job></white> job reached <yellow>Level <level></yellow>!</green>"
+  max_level_reached: "<prefix><gold><bold>MAX LEVEL REACHED!</bold> You mastered <white><job></white>! Permanent buff activated: <yellow><buff></yellow>.</gold>"
+  already_has_job: "<prefix><red>You are already working as a <yellow><job></yellow>!</red>"
+  not_enough_money: "<prefix><red>You need <yellow>$<cost></yellow> to change your job! Your balance: <yellow>$<balance></yellow>.</red>"
+  job_changed: "<prefix><green>You switched your profession to <white><job></white>! Reset fee: <yellow>$<cost></yellow>.</green>"
+  btn_select_job: "<green>Switch to this Job</green>"
+  btn_choose_now: "<green>Choose Profession Now</green>"
+  btn_change_job: "<gold>Switch Profession</gold>"
+  btn_guide: "<yellow>Jobs Guide & Tips</yellow>"
+  btn_main_menu: "<aqua>Return to Main Menu</aqua>"
+
+command:
+  admin:
+    reloaded: "<prefix><green>Configuration, shops, black market, and language bundles reloaded successfully.</green>"
+
+job:
+  hunter:
+    name: "Hunter"
+    description: "Earn XP & money by slaying monsters and hostile mobs."
+  farmer:
+    name: "Farmer"
+    description: "Earn XP & money by cultivating and harvesting crops."
+  miner:
+    name: "Miner"
+    description: "Earn XP & money by mining precious ores and minerals."
+  fisherman:
+    name: "Fisherman"
+    description: "Earn XP & money by catching fish and aquatic treasures."
+  explorer:
+    name: "Explorer"
+    description: "Earn XP & money by discovering lands, walking, swimming, and riding."
+  breeder:
+    name: "Breeder"
+    description: "Earn XP & money by breeding livestock and domestic animals."
+  blacksmith:
+    name: "Blacksmith"
+    description: "Earn XP & money by smelting metals and forging gear."
+  alchemist:
+    name: "Alchemist"
+    description: "Earn XP & money by concocting and brewing magical potions."
+  lumberjack:
+    name: "Lumberjack"
+    description: "Earn XP & money by felling timber and chopping logs."
+  digger:
+    name: "Digger"
+    description: "Earn XP & money by excavating dirt, sand, clay, and soils."
+
+dialog:
+  general:
+    btn_confirm: "<green>Confirm</green>"
+    btn_cancel: "<red>Cancel</red>"
+    btn_back: "<gray>Back</gray>"
+    btn_close: "<red>Close</red>"
+  market:
+    title: "<white>Market</white>"
+    body: "<gray>Welcome to the server market. Select a category below to browse items.</gray>\n<gray>Your balance: <yellow>$<balance></yellow></gray>"
+  category:
+    title: "<white><category></white>"
+    body: "<gray>Select an item from the <yellow><category></yellow> catalog to buy or sell.</gray>\n<gray>Your balance: <yellow>$<balance></yellow></gray>"
+  item_action:
+    title: "<white><item></white>"
+    body: "<gray>Item: <white><item></white></gray>\n<gray>Buy Price: <green>$<buy_price></green></gray>\n<gray>Sell Price: <gold>$<sell_price></gold></gray>\n<gray>In Inventory: <yellow><inv_count></yellow></gray>\n<gray>Balance: <yellow>$<balance></yellow></gray>"
+  buy_input:
+    title: "<white>Buy <item></white>"
+    body: "<gray>Enter the quantity of <white><item></white> you want to purchase.</gray>\n<gray>Unit price: <green>$<unit_price></green> | Balance: <yellow>$<balance></yellow></gray>"
+  buy_confirm:
+    title: "<white>Confirm Purchase</white>"
+    body: "<gray>Are you sure you want to purchase <white><amount>x <item></white> for <yellow>$<cost></yellow>?</gray>\n<gray>Your balance: <yellow>$<balance></yellow></gray>"
+  sell_input:
+    title: "<white>Sell <item></white>"
+    body: "<gray>Enter the quantity of <white><item></white> you want to sell.</gray>\n<gray>Unit payout: <gold>$<unit_payout></gold> | In Inventory: <yellow><inv_count></yellow></gray>"
+  sell_confirm:
+    title: "<white>Confirm Sale</white>"
+    body: "<gray>Are you sure you want to sell <white><amount>x <item></white> for <yellow>$<payout></yellow>?</gray>\n<gray>Your balance: <yellow>$<balance></yellow></gray>"
+  input:
+    quantity_label: "<gray>Quantity:</gray>"
+    promo_label: "<gray>Advertisement message:</gray>"
+  blackmarket:
+    title: "<white>Black Market</white>"
+    closed_title: "<white>Black Market Closed</white>"
+    body: "<red>Welcome to the clandestine Black Market. All items are discounted by <yellow><discount></yellow>!</red>\n<gray>Time remaining in this session: <aqua><remaining></aqua></gray>\n<gray>Your balance: <yellow>$<balance></yellow></gray>\n<dark_gray>Note: You cannot move while transacting here.</dark_gray>"
+  promosi:
+    title: "<white>Promotions</white>"
+    body: "<gray>Rent an automated server-wide advertisement broadcast.</gray>\n<gray>Cost: <yellow>$<cost></yellow> | Broadcast Duration: <yellow><duration> minutes</yellow></gray>\n<gray>Active slots: <yellow><active_count>/<max_slots></yellow> | Balance: <yellow>$<balance></yellow></gray>"
+  jobs:
+    title: "<white>Jobs</white>"
+    no_job_title: "<white>Jobs</white>"
+    no_job_body: "<white>You currently have not chosen an active profession.</white>\n\n<gray>The jobs system provides steady earnings in <yellow>money</yellow> and <aqua>Job EXP</aqua> whenever you perform activities matching your profession.</gray>\n\n<gray>Key Benefits & Features:</gray>\n<gray>• <white>10 Unique Professions</white> tailored to your playstyle.</gray>\n<gray>• <green>Permanent Self Buff</green> unlocked at Level 50.</gray>\n<gray>• <aqua>Aura Buff</aqua> automatically radiated to nearby allies (10 blocks).</gray>\n\n<dark_gray>Click the buttons below to pick your first job or read the guide.</dark_gray>"
+    body: "<white>Your Profession Details:</white>\n\n<gray>Profession: <yellow><job></yellow></gray>\n<gray>Level: <white><level></white><gray>/<max_level></gray> | EXP: <aqua><exp></aqua><gray>/<req_exp></gray> (<green><exp_percent>%</green>)</gray>\n\n<gray>Lv 50 Self Buff: <green><self_buff></green></gray>\n<gray>Nearby Aura Buff: <aqua><aura_buff></aqua></gray>\n\n<dark_gray>Note: Switching jobs costs $<reset_cost> and resets level to 1.</dark_gray>"
+    select_title: "<white>Select Profession</white>"
+    select_body: "<gray>Select one of the 10 professions below to view details and switch.</gray>"
+    btn_choose_now: "<green>Choose Profession Now</green>"
+    btn_change_job: "<gold>Switch Profession</gold>"
+    btn_guide: "<yellow>Jobs Guide & Tips</yellow>"
+    btn_main_menu: "<aqua>Return to Main Menu</aqua>"
+    btn_select_job: "<green>Switch to this Job</green>"
+  jobs_guide:
+    title: "<white>Jobs Guide</white>"
+    body: "<white>Jobs System Guide & Mechanics:</white>\n\n<yellow>1. Earning EXP & Currency</yellow>\n<gray>Every action matching your chosen profession (e.g. mining ores for Miner, chopping wood for Lumberjack, catching fish for Fisherman, etc.) directly awards <yellow>money</yellow> to your balance and adds <aqua>Job EXP</aqua>.</gray>\n\n<yellow>2. Leveling & Progression</yellow>\n<gray>Professions cap at <white>Level 50</white>. Higher job levels increase earnings and progression efficiency.</gray>\n\n<yellow>3. Level 50 Mastery Buffs</yellow>\n<gray>Reaching Level 50 unlocks a powerful <green>Permanent Self Buff</green> and radiates an <aqua>Aura Buff</aqua> to all party members and friendly adventurers within a 10-block radius.</gray>\n\n<yellow>4. Switching Professions</yellow>\n<gray>You may switch professions at any time for an administrative fee of <yellow>$<reset_cost></yellow>. Note that switching resets your new profession progress to Level 1.</gray>"
+    btn_all_jobs: "<yellow>List All 10 Jobs & Buffs</yellow>"
+    list_title: "<white>Professions Overview</white>"
+    list_body: "<gray>Select a profession below to view its specific tasks and Lv 50 buffs:</gray>"
+  job_details:
+    title: "<white><job></white>"
+    body: "<white>Profession: <yellow><job></yellow></white>\n<gray><description></gray>\n\n<white>Max Level Rewards (Lv 50):</white>\n<gray>• Self Buff: <green><self_buff></green></gray>\n<gray>• Nearby Aura Buff: <aqua><aura_buff></aqua></gray>\n\n<white>Switching Requirements:</white>\n<gray>• Switching Fee: <yellow>$<cost></yellow></gray>\n<gray>• Your Balance: <yellow>$<balance></yellow></gray>\n\n<dark_gray>Note: Switching jobs resets your job progress to Level 1.</dark_gray>"
+  job_confirm:
+    title: "<white>Confirm Job Change</white>"
+    body: "<red>Warning: Changing your job to <white><job></white> will cost <yellow>$<cost></yellow> and completely RESET your level to 1!</red>\n\n<gray>Do you want to proceed?</gray>"

@@ -1,0 +1,170 @@
+prefix: "<gray>[<gold>Ekonomi</gold>]</gray> "
+
+general:
+  btn_confirm: "<green>Konfirmasi</green>"
+  btn_cancel: "<red>Batal</red>"
+  btn_back: "<gray>Kembali</gray>"
+  btn_close: "<red>Tutup</red>"
+
+market:
+  btn_buy: "<green>Beli</green>"
+  btn_sell: "<gold>Jual</gold>"
+  invalid_quantity: "<prefix><red>Jumlah tidak valid! Harus berupa bilangan bulat positif.</red>"
+  not_enough_money: "<prefix><red>Uang Anda tidak mencukupi! Dibutuhkan: <yellow>$<cost></yellow>, Saldo: <yellow>$<balance></yellow>.</red>"
+  not_enough_items: "<prefix><red>Barang di inventori tidak cukup! Butuh: <yellow><required></yellow>, Dimiliki: <yellow><have></yellow>.</red>"
+  economy_unavailable: "<prefix><red>Penyedia ekonomi (Vault) sedang tidak aktif di server ini.</red>"
+  transaction_failed: "<prefix><red>Transaksi gagal diproses saat ini.</red>"
+  buy_success: "<prefix><green>Berhasil membeli <white><amount>x <item></white> seharga <yellow>$<cost></yellow>! Saldo sekarang: <yellow>$<balance></yellow>.</green>"
+  sell_success: "<prefix><green>Berhasil menjual <white><amount>x <item></white> seharga <yellow>$<payout></yellow>! Saldo sekarang: <yellow>$<balance></yellow>.</green>"
+
+blackmarket:
+  closed: "<prefix><red>Pasar Gelap saat ini sedang tutup!</red>\n<gray>Jadwal Buka: <yellow><schedule></yellow>\nSesi berikutnya dalam: <aqua><remaining></aqua></gray>"
+  cooldown: "<prefix><red>Anda harus menunggu <yellow><seconds> detik</yellow> sebelum dapat bertransaksi kembali di Pasar Gelap.</red>"
+
+auction:
+  closed: "<prefix><red>Arena Lelang Harian saat ini sedang ditutup!</red>\n<gray>Jadwal Sesi: <yellow><schedule></yellow>\nSesi berikutnya dalam: <aqua><remaining></aqua></gray>"
+  location_not_set: "<prefix><red>Lokasi arena lelang belum dikonfigurasi oleh admin server.</red>"
+  teleport_success: "<prefix><green>Melakukan teleportasi ke Arena Lelang Harian...</green>"
+  teleport_failed: "<prefix><red>Gagal melakukan teleportasi ke arena lelang.</red>"
+  location_saved: "<prefix><green>Lokasi arena lelang berhasil disimpan di <yellow><world></yellow> (<white><x>, <y>, <z></white>).</green>"
+
+promosi:
+  queue_full: "<prefix><red>Seluruh <yellow><max></yellow> slot siaran iklan saat ini sedang penuh! Coba lagi nanti.</red>"
+  cooldown: "<prefix><red>Anda masih dalam masa jeda promosi! Dapat mengajukan kembali dalam <yellow><time></yellow>.</red>"
+  not_enough_money: "<prefix><red>Anda butuh <yellow>$<cost></yellow> untuk menyewa slot iklan! Saldo Anda: <yellow>$<balance></yellow>.</red>"
+  empty_message: "<prefix><red>Pesan iklan promosi tidak boleh kosong!</red>"
+  success: "<prefix><green>Iklan promosi berhasil disewa seharga <yellow>$<cost></yellow>! Akan disiarkan selama <white><duration> menit</white>. Jeda berikutnya: <white><cooldown> jam</white>.</green>"
+  broadcast_format: "<gold>----------------------------------------</gold>\n<yellow><bold>[IKLAN PROMOSI OTOMATIS]</bold></yellow>\n<white><message></white>\n<gray>Dipromosikan oleh: <yellow><player></yellow> | Kontak: <yellow>/msg <player></yellow></gray>\n<gold>----------------------------------------</gold>"
+
+wtb:
+  broadcast: "<red><bold>ℹ <player> (<tag>)</bold></red>\n<white><player> sedang mencari</white>\n<white>Barang Spesifik: <red><item></red></white>\n<gray>→</gray> <red>/msg <player></red> <white>jika berminat</white>"
+wts:
+  broadcast: "<red><bold>ℹ <player> (<tag>)</bold></red>\n<white><player> sedang menjual</white>\n<white>Barang Spesifik: <red><item></red></white>\n<gray>→</gray> <red>/msg <player></red> <white>jika berminat</white>"
+wta:
+  broadcast: "<red><bold>ℹ <player> (<tag>)</bold></red>\n<white><player> sedang bertanya</white>\n<white>Topik / Barang: <red><item></red></white>\n<gray>→</gray> <red>/msg <player></red> <white>jika mengetahui</white>"
+
+jobs:
+  level_up: "<prefix><green>Selamat! Pekerjaan <white><job></white> Anda telah mencapai <yellow>Level <level></yellow>!</green>"
+  max_level_reached: "<prefix><gold><bold>LEVEL MAKSIMAL TERCAPAI!</bold> Anda telah menguasai pekerjaan <white><job></white>! Buff permanen aktif: <yellow><buff></yellow>.</gold>"
+  already_has_job: "<prefix><red>Anda sudah bekerja sebagai <yellow><job></yellow>!</red>"
+  not_enough_money: "<prefix><red>Anda butuh <yellow>$<cost></yellow>! Saldo Anda: <yellow>$<balance></yellow>.</red>"
+  job_changed: "<prefix><green>Anda telah berganti profesi menjadi <white><job></white>! Biaya reset: <yellow>$<cost></yellow>.</green>"
+  job_resigned: "<prefix><green>Anda telah berhasil keluar dari profesi <white><job></white>! Biaya: <yellow>$<cost></yellow>.</green>"
+  btn_select_job: "<white>Pilih Pekerjaan Ini</white>"
+  btn_choose_now: "<white>Pilih Pekerjaan Sekarang</white>"
+  btn_change_job: "<white>Ganti Pekerjaan</white>"
+  btn_guide: "<white>Panduan & Tips Pekerjaan</white>"
+  btn_main_menu: "<white>Kembali ke Menu Utama</white>"
+
+command:
+  admin:
+    reloaded: "<prefix><green>Konfigurasi, pasar, pasar gelap, dan paket bahasa berhasil dimuat ulang.</green>"
+
+job:
+  hunter:
+    name: "Hunter"
+    description: "Dapatkan EXP & uang dengan membunuh monster dan mob musuh."
+  farmer:
+    name: "Farmer"
+    description: "Dapatkan EXP & uang dengan menanam dan memanen hasil tani."
+  miner:
+    name: "Miner"
+    description: "Dapatkan EXP & uang dengan menambang berbagai bijih dan mineral berharga."
+  fisherman:
+    name: "Fisherman"
+    description: "Dapatkan EXP & uang dengan memancing ikan dan harta karun perairan."
+  explorer:
+    name: "Explorer"
+    description: "Dapatkan EXP & uang dengan menjelajah dunia, berjalan, berenang, dan berkendara."
+  breeder:
+    name: "Breeder"
+    description: "Dapatkan EXP & uang dengan mengembangbiakkan ternak dan hewan peliharaan."
+  blacksmith:
+    name: "Blacksmith"
+    description: "Dapatkan EXP & uang dengan melebur bijih logam dan membuat senjata/zirah."
+  alchemist:
+    name: "Alchemist"
+    description: "Dapatkan EXP & uang dengan meracik dan menyeduh berbagai ramuan sihir."
+  lumberjack:
+    name: "Lumberjack"
+    description: "Dapatkan EXP & uang dengan menebang pohon dan mengumpulkan kayu gelondongan."
+  digger:
+    name: "Digger"
+    description: "Dapatkan EXP & uang dengan menggali tanah, pasir, tanah liat, dan kerikil."
+
+dialog:
+  general:
+    btn_confirm: "<white>Konfirmasi</white>"
+    btn_cancel: "<white>Batal</white>"
+    btn_back: "<white>Kembali</white>"
+    btn_close: "<white>Tutup</white>"
+  market:
+    title: "<white>Pasar</white>"
+    body: "<white>Katalog Pasar Server:</white>\n\n<gray>Selamat datang di pasar resmi server. Pilih kategori di bawah untuk menjelajahi barang dagangan.</gray>\n\n<white>Informasi Akun:</white>\n<gray>• Saldo Anda Saat Ini:</gray> <white>$<balance></white>"
+  category:
+    title: "<white><category></white>"
+    body: "<white>Kategori: <category></white>\n\n<gray>Pilih barang dari katalog untuk melakukan pembelian atau penjualan.</gray>\n\n<white>Informasi Akun:</white>\n<gray>• Saldo Anda Saat Ini:</gray> <white>$<balance></white>"
+  item_action:
+    title: "<white><item></white>"
+    body: "<white>Rincian Barang Dagangan:</white>\n\n<gray>• Nama Barang:</gray> <white><item></white>\n<gray>• Harga Beli:</gray> <white>$<buy_price></white>\n<gray>• Harga Jual:</gray> <white>$<sell_price></white>\n<gray>• Stok di Inventori:</gray> <white><inv_count></white>\n\n<white>Informasi Akun:</white>\n<gray>• Saldo Anda Saat Ini:</gray> <white>$<balance></white>"
+  buy_input:
+    title: "<white>Beli <item></white>"
+    body: "<white>Pembelian Barang:</white>\n\n<gray>Masukkan jumlah <white><item></white> yang ingin Anda beli.</gray>\n<gray>• Harga Satuan:</gray> <white>$<unit_price></white>\n<gray>• Saldo Anda:</gray> <white>$<balance></white>"
+  buy_confirm:
+    title: "<white>Konfirmasi Pembelian</white>"
+    body: "<white>Konfirmasi Transaksi Beli:</white>\n\n<gray>Apakah Anda yakin ingin membeli <white><amount>x <item></white> seharga <white>$<cost></white>?</gray>\n\n<gray>• Saldo Anda Setelah Beli:</gray> <white>$<balance></white>"
+  sell_input:
+    title: "<white>Jual <item></white>"
+    body: "<white>Penjualan Barang:</white>\n\n<gray>Masukkan jumlah <white><item></white> yang ingin Anda jual.</gray>\n<gray>• Harga per Satuan:</gray> <white>$<unit_payout></white>\n<gray>• Stok di Inventori:</gray> <white><inv_count></white>"
+  sell_confirm:
+    title: "<white>Konfirmasi Penjualan</white>"
+    body: "<white>Konfirmasi Transaksi Jual:</white>\n\n<gray>Apakah Anda yakin ingin menjual <white><amount>x <item></white> seharga <white>$<payout></white>?</gray>\n\n<gray>• Saldo Anda Setelah Jual:</gray> <white>$<balance></white>"
+  input:
+    quantity_label: "<gray>Jumlah:</gray>"
+    promo_label: "<gray>Pesan iklan promosi:</gray>"
+  blackmarket:
+    title: "<white>Pasar Gelap</white>"
+    closed_title: "<white>Pasar Gelap Tutup</white>"
+    body: "<white>Pasar Gelap Rahasia:</white>\n\n<gray>Semua barang selundupan mendapatkan diskon khusus <white><discount></white>!</gray>\n<gray>• Sisa Waktu Buka Sesi Ini:</gray> <white><remaining></white>\n<gray>• Saldo Anda Saat Ini:</gray> <white>$<balance></white>\n\n<gray>Catatan: Karakter Anda tidak dapat bergerak selama proses transaksi di pasar gelap.</gray>"
+  promosi:
+    title: "<white>Promosi</white>"
+    body: "<white>Sewa Slot Promosi Server:</white>\n\n<gray>Siarkan iklan Anda secara berkala ke seluruh pemain server.</gray>\n<gray>• Biaya Sewa:</gray> <white>$<cost></white>\n<gray>• Durasi Penayangan:</gray> <white><duration> menit</white>\n<gray>• Slot Aktif:</gray> <white><active_count>/<max_slots></white>\n<gray>• Saldo Anda:</gray> <white>$<balance></white>"
+  jobs:
+    title: "<white>Pekerjaan</white>"
+    no_job_title: "<white>Pekerjaan</white>"
+    no_job_body: "<white>Status Profesi: Belum Memilih Pekerjaan</white>\n\n<gray>Sistem pekerjaan memberikan penghasilan uang dan Job EXP setiap kali Anda beraktivitas di server.</gray>\n\n<white>Keuntungan & Fitur Pekerjaan:</white>\n<gray>• 10 Pilihan Profesi unik sesuai gaya bermain Anda.</gray>\n<gray>• Buff Pasif Permanen saat mencapai Level 50.</gray>\n<gray>• Aura Buff yang otomatis dipancarkan ke rekan sekitar (10 blok).</gray>\n<gray>• Akses ke berbagai Quest Pekerjaan untuk bonus hadiah melimpah.</gray>\n\n<gray>Silakan pilih profesi pertama Anda atau pelajari panduan melalui tombol di bawah.</gray>"
+    body: "<white>Informasi Profesi Anda:</white>\n\n<white>Profesi:</white> <white><job></white>\n<white>Level:</white> <white><level></white><gray>/<max_level></gray> | <white>EXP:</white> <white><exp></white><gray>/<req_exp></gray> <gray>(<exp_percent>%)</gray>\n\n<gray>Buka Detail Pekerjaan untuk melihat rincian progres, buff, quest profesi, atau mengundurkan diri dari pekerjaan.</gray>"
+    select_title: "<white>Pilih Profesi</white>"
+    select_body: "<gray>Pilih salah satu dari 10 profesi di bawah ini untuk melihat detail dan memilihnya.</gray>"
+    btn_choose_now: "<white>Pilih Pekerjaan Sekarang</white>"
+    btn_details: "<white>Detail Pekerjaan</white>"
+    btn_change_job: "<white>Ganti Pekerjaan</white>"
+    btn_guide: "<white>Panduan & Tips Pekerjaan</white>"
+    btn_main_menu: "<white>Kembali ke Menu Utama</white>"
+    btn_select_job: "<white>Pilih Pekerjaan Ini</white>"
+    btn_quests: "<white>Quest Pekerjaan</white>"
+    btn_resign: "<white>Keluar dari Pekerjaan</white>"
+    active_title: "<white>Detail Pekerjaan: <job></white>"
+    active_body: "<white>Rincian Profesi: <job></white>\n\n<white>Perkembangan Level:</white>\n<gray>• Level Saat Ini:</gray> <white><level></white><gray>/<max_level></gray>\n<gray>• Total EXP:</gray> <white><exp></white><gray>/<req_exp></gray> <gray>(<exp_percent>%)</gray>\n\n<white>Aktivitas Penghasil EXP & Uang:</white>\n<gray><description></gray>\n\n<white>Hadiah Master Level 50:</white>\n<gray>• Buff Karakter:</gray> <white><self_buff></white>\n<gray>• Buff Aura Sekitar (10 blok):</gray> <white><aura_buff></white>\n\n<gray>Selesaikan Quest Pekerjaan untuk mempercepat perolehan Job EXP.</gray>"
+    quests_title: "<white>Quest Pekerjaan: <job></white>"
+    quests_body: "<white>Pusat Misi & Quest: <job></white>\n\n<gray>Selesaikan misi harian dan tantangan khusus profesi ini untuk mendapatkan bonus koin besar dan lonjakan Job EXP.</gray>\n\n<white>Kategori Quest Tersedia:</white>\n<gray>• Misi Harian: Tugas rutin berhadiah koin & EXP harian.</gray>\n<gray>• Tantangan Spesialis: Tantangan berskala besar sesuai profesi.</gray>\n<gray>• Milestone Tingkat: Misi pencapaian kenaikan level tier.</gray>\n\n<gray>Catatan: Fitur quest terhubung langsung dengan sistem ClarityQuest.</gray>"
+    btn_quest_daily: "<white>Misi Harian</white>"
+    btn_quest_specialist: "<white>Tantangan Spesialis</white>"
+    btn_quest_milestone: "<white>Milestone Tingkat</white>"
+    quest_detail_title: "<white>Info Quest: <category></white>"
+    quest_detail_body: "<white>Kategori Quest: <category></white>\n\n<white>Status:</white> <white>Tersedia</white>\n<gray>Target: Selesaikan aktivitas profesi <white><job></white> untuk menyelesaikan target quest ini.</gray>\n<gray>Hadiah: Koin Vault & Job EXP berlipat ganda.</gray>\n\n<gray>Catatan: Integrasi penuh sedang disiapkan bersama plugin ClarityQuest.</gray>"
+    resign_title: "<white>Keluar dari Pekerjaan</white>"
+    resign_body: "<white>Pengunduran Diri dari Profesi <job>:</white>\n\n<gray>Apakah Anda yakin ingin keluar dari profesi <white><job></white>?</gray>\n\n<white>Rincian Biaya & Konsekuensi:</white>\n<gray>• Biaya Pengunduran Diri:</gray> <white>$<cost></white>\n<gray>• Saldo Anda Saat Ini:</gray> <white>$<balance></white>\n<gray>• Level profesi ini akan direset kembali ke Level 1.</gray>\n\n<gray>Setelah keluar, Anda dapat langsung memilih profesi baru di menu pekerjaan.</gray>"
+    btn_confirm_resign: "<white>Konfirmasi Keluar</white>"
+  jobs_guide:
+    title: "<white>Panduan Pekerjaan</white>"
+    body: "<white>Panduan Sistem Pekerjaan (Jobs):</white>\n\n<white>1. Cara Mendapatkan EXP & Uang</white>\n<gray>Setiap aktivitas yang sesuai profesi Anda langsung memberikan uang dan Job EXP.</gray>\n\n<white>2. Perkembangan Level</white>\n<gray>Level pekerjaan maksimal adalah Level 50. Semakin tinggi level Anda, semakin banyak uang yang diperoleh dari setiap aktivitas pekerjaan.</gray>\n\n<white>3. Hadiah Level 50 (Mastery Buffs)</white>\n<gray>Saat mencapai Level 50, Anda membuka Buff Pasif Permanen untuk diri sendiri serta Aura Buff yang dipancarkan secara berkala ke pemain lain di sekitar Anda (radius 10 blok).</gray>\n\n<white>4. Mengganti & Keluar dari Pekerjaan</white>\n<gray>Anda dapat mengundurkan diri dari profesi kapan saja melalui menu Detail Pekerjaan dengan biaya $<reset_cost>. Setelah keluar, Anda dapat memilih profesi baru.</gray>"
+    btn_all_jobs: "<white>Daftar 10 Profesi & Buff</white>"
+    list_title: "<white>Daftar Profesi</white>"
+    list_body: "<gray>Pilih profesi di bawah untuk melihat rincian aktivitas dan buff yang diberikan:</gray>"
+  job_details:
+    title: "<white><job></white>"
+    body: "<white>Profesi: <job></white>\n<gray><description></gray>\n\n<white>Hadiah Level Maksimal (Lv 50):</white>\n<gray>• Buff Diri Sendiri:</gray> <white><self_buff></white>\n<gray>• Buff Aura Pemain Sekitar:</gray> <white><aura_buff></white>\n\n<white>Biaya Pemilihan / Penggantian:</white>\n<gray>• Biaya Reset:</gray> <white>$<cost></white>\n<gray>• Saldo Anda:</gray> <white>$<balance></white>\n\n<gray>Catatan: Mengganti pekerjaan akan mereset level pekerjaan ke 1.</gray>"
+  job_confirm:
+    title: "<white>Konfirmasi Ganti Pekerjaan</white>"
+    body: "<white>Peringatan Penggantian Profesi:</white>\n\n<gray>Mengganti pekerjaan ke <white><job></white> akan dikenakan biaya <white>$<cost></white> dan mereset level Anda ke 1.</gray>\n\n<gray>Apakah Anda yakin ingin melanjutkan?</gray>"

@@ -1,0 +1,18 @@
+# ==============================================================================
+#                  Shop Category Template (_template.yml)
+# ==============================================================================
+# Files beginning with an underscore (_) are ignored when loading categories.
+# Duplicate this file to create custom shop categories (e.g. food.yml, redstone.yml).
+# ==============================================================================
+
+name: "Category Name"
+icon: "CHEST"
+description: "Brief description of items sold here"
+
+items:
+  item_id:
+    material: "STONE"
+    name: "Custom Display Name" # Optional, default: Material name
+    buy_price: 10.0            # Price to buy, set to 0 to disable buying
+    sell_price: 5.0            # Price to sell, set to 0 to disable selling
+    description: "Item lore description" # Optional

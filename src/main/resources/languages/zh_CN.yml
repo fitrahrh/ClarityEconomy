@@ -1,0 +1,154 @@
+prefix: "<gray>[<gold>经济</gold>]</gray> "
+
+general:
+  btn_confirm: "<green>确认</green>"
+  btn_cancel: "<red>取消</red>"
+  btn_back: "<gray>返回</gray>"
+  btn_close: "<red>关闭</red>"
+
+market:
+  btn_buy: "<green>购买</green>"
+  btn_sell: "<gold>出售</gold>"
+  invalid_quantity: "<prefix><red>数量无效！必须为正整数。</red>"
+  not_enough_money: "<prefix><red>金币不足！需要：<yellow>$<cost></yellow>，当前余额：<yellow>$<balance></yellow>。</red>"
+  not_enough_items: "<prefix><red>背包中的物品不足！需要：<yellow><required></yellow>，现有：<yellow><have></yellow>。</red>"
+  economy_unavailable: "<prefix><red>服务器经济系统 (Vault) 当前未启用。</red>"
+  transaction_failed: "<prefix><red>交易处理失败。</red>"
+  buy_success: "<prefix><green>成功以 <yellow>$<cost></yellow> 购买 <white><amount> 个 <item></white>！当前余额：<yellow>$<balance></yellow>。</green>"
+  sell_success: "<prefix><green>成功以 <yellow>$<payout></yellow> 出售 <white><amount> 个 <item></white>！当前余额：<yellow>$<balance></yellow>。</green>"
+
+blackmarket:
+  closed: "<prefix><red>黑市当前处于关闭状态！</red>\n<gray>营业安排：<yellow><schedule></yellow>\n下次开放剩余时间：<aqua><remaining></aqua></gray>"
+  cooldown: "<prefix><red>再次在黑市交易前需等待 <yellow><seconds> 秒</yellow>。</red>"
+
+auction:
+  closed: "<prefix><red>每日拍卖场当前处于关闭状态！</red>\n<gray>开放场次：<yellow><schedule></yellow>\n下次场次剩余时间：<aqua><remaining></aqua></gray>"
+  location_not_set: "<prefix><red>管理员尚未配置拍卖场传送位置。</red>"
+  teleport_success: "<prefix><green>正在传送至每日拍卖场...</green>"
+  teleport_failed: "<prefix><red>传送至拍卖场失败。</red>"
+  location_saved: "<prefix><green>拍卖场位置已保存至 <yellow><world></yellow> (<white><x>, <y>, <z></white>)。</green>"
+
+promosi:
+  queue_full: "<prefix><red>所有广告槽位（共 <yellow><max></yellow> 个）已满！请稍后再试。</red>"
+  cooldown: "<prefix><red>您的广告投放处于冷却中！可在 <yellow><time></yellow> 后再次发布。</red>"
+  not_enough_money: "<prefix><red>租用广告槽位需要 <yellow>$<cost></yellow>！您的余额：<yellow>$<balance></yellow>。</red>"
+  empty_message: "<prefix><red>广告内容不能为空！</red>"
+  success: "<prefix><green>广告已成功租用，花费 <yellow>$<cost></yellow>！将在全服轮播 <white><duration> 分钟</white>。冷却时间：<white><cooldown> 小时</white>。</green>"
+  broadcast_format: "<gold>----------------------------------------</gold>\n<yellow><bold>[商业全服广播广告]</bold></yellow>\n<white><message></white>\n<gray>赞助玩家：<yellow><player></yellow> | 联系方式：<yellow>/msg <player></yellow></gray>\n<gold>----------------------------------------</gold>"
+
+wtb:
+  broadcast: "<red><bold>ℹ <player> (<tag>)</bold></red>\n<white><player> 正在求购</white>\n<white>目标物品：<red><item></red></white>\n<gray>→</gray> 如有货源请 <red>/msg <player></red>"
+wts:
+  broadcast: "<red><bold>ℹ <player> (<tag>)</bold></red>\n<white><player> 正在出售</white>\n<white>出售物品：<red><item></red></white>\n<gray>→</gray> 欲购从速请 <red>/msg <player></red>"
+wta:
+  broadcast: "<red><bold>ℹ <player> (<tag>)</bold></red>\n<white><player> 正在打听</white>\n<white>咨询问题/物品：<red><item></red></white>\n<gray>→</gray> 知情请 <red>/msg <player></red>"
+
+jobs:
+  level_up: "<prefix><green>恭喜！您的职业 <white><job></white> 已升至 <yellow><level> 级</yellow>！</green>"
+  max_level_reached: "<prefix><gold><bold>满级达成！</bold> 您已完全精通职业 <white><job></white>！永久增益已激活：<yellow><buff></yellow>。</gold>"
+  already_has_job: "<prefix><red>您已经就职于 <yellow><job></yellow>！</red>"
+  not_enough_money: "<prefix><red>转职需要支付手续费 <yellow>$<cost></yellow>！当前余额：<yellow>$<balance></yellow>。</red>"
+  job_changed: "<prefix><green>您已成功将职业转为 <white><job></white>！转职费用：<yellow>$<cost></yellow>。</green>"
+  btn_select_job: "<green>选择此职业</green>"
+  btn_choose_now: "<green>立即选择职业</green>"
+  btn_change_job: "<gold>更换职业</gold>"
+  btn_guide: "<yellow>职业指南与技巧</yellow>"
+  btn_main_menu: "<aqua>返回主菜单</aqua>"
+
+command:
+  admin:
+    reloaded: "<prefix><green>配置文件、商城、黑市与语言包已成功重载。</green>"
+
+job:
+  hunter:
+    name: "猎人"
+    description: "通过击杀怪物和敌对生物获取经验与金币。"
+  farmer:
+    name: "农民"
+    description: "通过耕种和收获各类农作物获取经验与金币。"
+  miner:
+    name: "矿工"
+    description: "通过开采稀有矿石与地下矿物获取经验与金币。"
+  fisherman:
+    name: "渔夫"
+    description: "通过钓鱼和打捞水下宝藏获取经验与金币。"
+  explorer:
+    name: "探险家"
+    description: "通过探索未知区域、步行、游泳与骑乘获取经验与金币。"
+  breeder:
+    name: "饲养员"
+    description: "通过繁殖牲畜与驯养动物获取经验与金币。"
+  blacksmith:
+    name: "铁匠"
+    description: "通过冶炼金属与锻造武器护甲获取经验与金币。"
+  alchemist:
+    name: "炼金师"
+    description: "通过调配与酿造神奇药水获取经验与金币。"
+  lumberjack:
+    name: "伐木工"
+    description: "通过采伐树木与收集木材获取经验与金币。"
+  digger:
+    name: "掘地工"
+    description: "通过挖掘泥土、沙子、黏土与砂砾获取经验与金币。"
+
+dialog:
+  general:
+    btn_confirm: "<green>确认</green>"
+    btn_cancel: "<red>取消</red>"
+    btn_back: "<gray>返回</gray>"
+    btn_close: "<red>关闭</red>"
+  market:
+    title: "<white>商城</white>"
+    body: "<gray>欢迎来到服务器官方商城。请在下方选择商品分类。</gray>\n<gray>您的余额：<yellow>$<balance></yellow></gray>"
+  category:
+    title: "<white><category></white>"
+    body: "<gray>请从 <yellow><category></yellow> 分类中选择物品进行购买或出售。</gray>\n<gray>您的余额：<yellow>$<balance></yellow></gray>"
+  item_action:
+    title: "<white><item></white>"
+    body: "<gray>物品：<white><item></white></gray>\n<gray>购买单价：<green>$<buy_price></green></gray>\n<gray>出售单价：<gold>$<sell_price></gold></gray>\n<gray>背包存量：<yellow><inv_count></yellow></gray>\n<gray>当前余额：<yellow>$<balance></yellow></gray>"
+  buy_input:
+    title: "<white>购买 <item></white>"
+    body: "<gray>请输入您想要购买的 <white><item></white> 数量。</gray>\n<gray>单价：<green>$<unit_price></green> | 余额：<yellow>$<balance></yellow></gray>"
+  buy_confirm:
+    title: "<white>确认购买</white>"
+    body: "<gray>您确定要花费 <yellow>$<cost></yellow> 购买 <white><amount> 个 <item></white> 吗？</gray>\n<gray>您的余额：<yellow>$<balance></yellow></gray>"
+  sell_input:
+    title: "<white>出售 <item></white>"
+    body: "<gray>请输入您想要出售的 <white><item></white> 数量。</gray>\n<gray>出售单价：<gold>$<unit_payout></gold> | 背包存量：<yellow><inv_count></yellow></gray>"
+  sell_confirm:
+    title: "<white>确认出售</white>"
+    body: "<gray>您确定要出售 <white><amount> 个 <item></white> 获得 <yellow>$<payout></yellow> 吗？</gray>\n<gray>您的余额：<yellow>$<balance></yellow></gray>"
+  input:
+    quantity_label: "<gray>数量：</gray>"
+    promo_label: "<gray>广告宣传语：</gray>"
+  blackmarket:
+    title: "<white>黑市</white>"
+    closed_title: "<white>黑市已关闭</white>"
+    body: "<red>欢迎来到隐秘黑市。全场物品专享 <yellow><discount></yellow> 折扣！</red>\n<gray>本次营业剩余时间：<aqua><remaining></aqua></gray>\n<gray>您的余额：<yellow>$<balance></yellow></gray>\n<dark_gray>注意：交易期间角色将处于定身状态。</dark_gray>"
+  promosi:
+    title: "<white>商业推广</white>"
+    body: "<gray>租用全服自动播报广告位。</gray>\n<gray>费用：<yellow>$<cost></yellow> | 轮播时长：<yellow><duration> 分钟</yellow></gray>\n<gray>活跃槽位：<yellow><active_count>/<max_slots></yellow> | 余额：<yellow>$<balance></yellow></gray>"
+  jobs:
+    title: "<white>职业</white>"
+    no_job_title: "<white>职业</white>"
+    no_job_body: "<white>您当前尚未选择任何职业。</white>\n\n<gray>职业系统允许您在日常活动（如挖矿、砍树、打怪等）中轻松赚取 <yellow>金币</yellow> 与 <aqua>职业经验</aqua>。</gray>\n\n<gray>核心优势与特色：</gray>\n<gray>• <white>10 种独具特色的职业</white>，适配不同的游玩风格。</gray>\n<gray>• 升至 50 级解锁强力 <green>永久自身被动增益</green>。</gray>\n<gray>• 释放 <aqua>团队光环增益</aqua>，守护周围 10 格内的队友。</gray>\n\n<dark_gray>请点击下方按钮选择您的第一份职业，或查阅指南。</dark_gray>"
+    body: "<white>您的职业详情：</white>\n\n<gray>职业：<yellow><job></yellow></gray>\n<gray>等级：<white><level></white><gray>/<max_level></gray> | 经验：<aqua><exp></aqua><gray>/<req_exp></gray> (<green><exp_percent>%</green>)</gray>\n\n<gray>自身增益 (50级)：<green><self_buff></green></gray>\n<gray>附近光环增益：<aqua><aura_buff></aqua></gray>\n\n<dark_gray>注意：更换职业需要花费 $<reset_cost> 并重置等级为 1 级。</dark_gray>"
+    select_title: "<white>选择职业</white>"
+    select_body: "<gray>请在下方 10 个职业中选择查看详情或进行转职：</gray>"
+    btn_choose_now: "<green>立即选择职业</green>"
+    btn_change_job: "<gold>更换职业</gold>"
+    btn_guide: "<yellow>职业指南与技巧</yellow>"
+    btn_main_menu: "<aqua>返回主菜单</aqua>"
+    btn_select_job: "<green>选择此职业</green>"
+  jobs_guide:
+    title: "<white>职业指南</white>"
+    body: "<white>职业机制综合指引：</white>\n\n<yellow>1. 获取经验与金币</yellow>\n<gray>任何符合您职业本职的操作（如矿工挖矿、伐木工砍树、渔夫钓鱼等）均会即时获得 <yellow>金币</yellow> 并增加 <aqua>职业经验</aqua>。</gray>\n\n<yellow>2. 等级与成长</yellow>\n<gray>职业等级上限为 <white>50 级</white>。等级越高，单次行动收益越高。</gray>\n\n<yellow>3. 满级精通增益 (50 级)</yellow>\n<gray>达到 50 级后，您将解锁专属于自己的 <green>永久自身增益</green>，并周期性向周围 10 格内的盟友辐射 <aqua>光环增益</aqua>。</gray>\n\n<yellow>4. 更换职业</yellow>\n<gray>您可以随时支付 <yellow>$<reset_cost></yellow> 手续费转职，新职业等级将从 1 级重新开始计算。</gray>"
+    btn_all_jobs: "<yellow>查看全部 10 种职业与增益</yellow>"
+    list_title: "<white>职业列表总览</white>"
+    list_body: "<gray>点击下方职业以查看对应活动及 50 级专属增益：</gray>"
+  job_details:
+    title: "<white><job></white>"
+    body: "<white>职业：<yellow><job></yellow></white>\n<gray><description></gray>\n\n<white>满级奖励 (50 级)：</white>\n<gray>• 自身增益：<green><self_buff></green></gray>\n<gray>• 周围光环增益：<aqua><aura_buff></aqua></gray>\n\n<white>就职/转职要求：</white>\n<gray>• 手续费：<yellow>$<cost></yellow></gray>\n<gray>• 您的余额：<yellow>$<balance></yellow></gray>\n\n<dark_gray>注意：更换职业后等级将重置为 1 级。</dark_gray>"
+  job_confirm:
+    title: "<white>确认更换职业</white>"
+    body: "<red>警告：转职为 <white><job></white> 将收取 <yellow>$<cost></yellow> 手续费，且等级将重置为 1 级！</red>\n\n<gray>您确定要继续吗？</gray>"

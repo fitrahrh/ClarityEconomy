@@ -1,0 +1,154 @@
+prefix: "<gray>[<gold>Экономика</gold>]</gray> "
+
+general:
+  btn_confirm: "<green>Подтвердить</green>"
+  btn_cancel: "<red>Отмена</red>"
+  btn_back: "<gray>Назад</gray>"
+  btn_close: "<red>Закрыть</red>"
+
+market:
+  btn_buy: "<green>Купить</green>"
+  btn_sell: "<gold>Продать</gold>"
+  invalid_quantity: "<prefix><red>Неверное количество! Должно быть положительным целым числом.</red>"
+  not_enough_money: "<prefix><red>Недостаточно средств! Требуется: <yellow>$<cost></yellow>, Баланс: <yellow>$<balance></yellow>.</red>"
+  not_enough_items: "<prefix><red>В инвентаре недостаточно предметов! Нужно: <yellow><required></yellow>, Есть: <yellow><have></yellow>.</red>"
+  economy_unavailable: "<prefix><red>Провайдер экономики (Vault) в данный момент не активен.</red>"
+  transaction_failed: "<prefix><red>Не удалось завершить транзакцию.</red>"
+  buy_success: "<prefix><green>Успешно куплено <white><amount>x <item></white> за <yellow>$<cost></yellow>! Новый баланс: <yellow>$<balance></yellow>.</green>"
+  sell_success: "<prefix><green>Успешно продано <white><amount>x <item></white> за <yellow>$<payout></yellow>! Новый баланс: <yellow>$<balance></yellow>.</green>"
+
+blackmarket:
+  closed: "<prefix><red>Черный рынок сейчас закрыт!</red>\n<gray>График работы: <yellow><schedule></yellow>\nСледующее открытие через: <aqua><remaining></aqua></gray>"
+  cooldown: "<prefix><red>Подождите <yellow><seconds> сек.</yellow> перед следующей сделкой на Черном рынке.</red>"
+
+auction:
+  closed: "<prefix><red>Арена ежедневных аукционов сейчас закрыта!</red>\n<gray>Расписание: <yellow><schedule></yellow>\nСледующая сессия через: <aqua><remaining></aqua></gray>"
+  location_not_set: "<prefix><red>Местоположение арены аукциона еще не настроено администратором.</red>"
+  teleport_success: "<prefix><green>Телепортация на Арену аукционов...</green>"
+  teleport_failed: "<prefix><red>Не удалось телепортироваться на арену аукционов.</red>"
+  location_saved: "<prefix><green>Точка арены аукционов сохранена в <yellow><world></yellow> (<white><x>, <y>, <z></white>).</green>"
+
+promosi:
+  queue_full: "<prefix><red>Все <yellow><max></yellow> слотов объявлений заняты! Попробуйте позже.</red>"
+  cooldown: "<prefix><red>У вас действует задержка на рекламу! Доступно через <yellow><time></yellow>.</red>"
+  not_enough_money: "<prefix><red>Вам нужно <yellow>$<cost></yellow> для аренды объявления! Баланс: <yellow>$<balance></yellow>.</red>"
+  empty_message: "<prefix><red>Рекламное сообщение не может быть пустым!</red>"
+  success: "<prefix><green>Объявление принято за <yellow>$<cost></yellow>! Трансляция в течение <white><duration> мин.</white>. Задержка: <white><cooldown> ч.</white>.</green>"
+  broadcast_format: "<gold>----------------------------------------</gold>\n<yellow><bold>[РЕКЛАМНОЕ ОБЪЯВЛЕНИЕ]</bold></yellow>\n<white><message></white>\n<gray>Спонсор: <yellow><player></yellow> | Связь: <yellow>/msg <player></yellow></gray>\n<gold>----------------------------------------</gold>"
+
+wtb:
+  broadcast: "<red><bold>ℹ <player> (<tag>)</bold></red>\n<white><player> ищет</white>\n<white>Предмет: <red><item></red></white>\n<gray>→</gray> <red>/msg <player></red> <white>если есть предложение</white>"
+wts:
+  broadcast: "<red><bold>ℹ <player> (<tag>)</bold></red>\n<white><player> продает</white>\n<white>Предмет: <red><item></red></white>\n<gray>→</gray> <red>/msg <player></red> <white>если интересно</white>"
+wta:
+  broadcast: "<red><bold>ℹ <player> (<tag>)</bold></red>\n<white><player> спрашивает</white>\n<white>Тема / Предмет: <red><item></red></white>\n<gray>→</gray> <red>/msg <player></red> <white>если знаете</white>"
+
+jobs:
+  level_up: "<prefix><green>Поздравляем! Ваша профессия <white><job></white> достигла <yellow>Уровня <level></yellow>!</green>"
+  max_level_reached: "<prefix><gold><bold>МАКСИМАЛЬНЫЙ УРОВЕНЬ!</bold> Вы освоили <white><job></white>! Постоянный бафф активен: <yellow><buff></yellow>.</gold>"
+  already_has_job: "<prefix><red>Вы уже работаете по специальности <yellow><job></yellow>!</red>"
+  not_enough_money: "<prefix><red>Вам нужно <yellow>$<cost></yellow> для смены профессии! Баланс: <yellow>$<balance></yellow>.</red>"
+  job_changed: "<prefix><green>Вы сменили профессию на <white><job></white>! Стоимость смены: <yellow>$<cost></yellow>.</green>"
+  btn_select_job: "<green>Выбрать эту профессию</green>"
+  btn_choose_now: "<green>Выбрать профессию сейчас</green>"
+  btn_change_job: "<gold>Сменить профессию</gold>"
+  btn_guide: "<yellow>Гайд и советы по профессиям</yellow>"
+  btn_main_menu: "<aqua>В главное меню</aqua>"
+
+command:
+  admin:
+    reloaded: "<prefix><green>Конфигурация, магазины, черный рынок и языковые пакеты успешно перезагружены.</green>"
+
+job:
+  hunter:
+    name: "Охотник"
+    description: "Получайте опыт и деньги за убийство монстров и враждебных мобов."
+  farmer:
+    name: "Фермер"
+    description: "Получайте опыт и деньги за выращивание и сбор урожая."
+  miner:
+    name: "Шахтер"
+    description: "Получайте опыт и деньги за добычу руд и минералов."
+  fisherman:
+    name: "Рыбак"
+    description: "Получайте опыт и деньги за вылов рыбы и сокровищ."
+  explorer:
+    name: "Исследователь"
+    description: "Получайте опыт и деньги за исследование земель, плавание и верховую езду."
+  breeder:
+    name: "Заводчик"
+    description: "Получайте опыт и деньги за разведение домашнего скота и животных."
+  blacksmith:
+    name: "Кузнец"
+    description: "Получайте опыт и деньги за переплавку металлов и ковку снаряжения."
+  alchemist:
+    name: "Алхимик"
+    description: "Получайте опыт и деньги за варку магических зелий."
+  lumberjack:
+    name: "Лесоруб"
+    description: "Получайте опыт и деньги за рубку деревьев и заготовку древесины."
+  digger:
+    name: "Землекоп"
+    description: "Получайте опыт и деньги за раскопку земли, песка, глины и гравия."
+
+dialog:
+  general:
+    btn_confirm: "<green>Подтвердить</green>"
+    btn_cancel: "<red>Отмена</red>"
+    btn_back: "<gray>Назад</gray>"
+    btn_close: "<red>Закрыть</red>"
+  market:
+    title: "<white>Рынок</white>"
+    body: "<gray>Добро пожаловать на официальный рынок. Выберите категорию ниже.</gray>\n<gray>Ваш баланс: <yellow>$<balance></yellow></gray>"
+  category:
+    title: "<white><category></white>"
+    body: "<gray>Выберите предмет из каталога <yellow><category></yellow> для покупки или продажи.</gray>\n<gray>Ваш баланс: <yellow>$<balance></yellow></gray>"
+  item_action:
+    title: "<white><item></white>"
+    body: "<gray>Предмет: <white><item></white></gray>\n<gray>Покупка: <green>$<buy_price></green></gray>\n<gray>Продажа: <gold>$<sell_price></gold></gray>\n<gray>В инвентаре: <yellow><inv_count></yellow></gray>\n<gray>Баланс: <yellow>$<balance></yellow></gray>"
+  buy_input:
+    title: "<white>Купить <item></white>"
+    body: "<gray>Введите количество <white><item></white> для покупки.</gray>\n<gray>Цена за штуку: <green>$<unit_price></green> | Баланс: <yellow>$<balance></yellow></gray>"
+  buy_confirm:
+    title: "<white>Подтверждение покупки</white>"
+    body: "<gray>Вы уверены, что хотите купить <white><amount>x <item></white> за <yellow>$<cost></yellow>?</gray>\n<gray>Ваш баланс: <yellow>$<balance></yellow></gray>"
+  sell_input:
+    title: "<white>Продать <item></white>"
+    body: "<gray>Введите количество <white><item></white> для продажи.</gray>\n<gray>Выплата за штуку: <gold>$<unit_payout></gold> | В инвентаре: <yellow><inv_count></yellow></gray>"
+  sell_confirm:
+    title: "<white>Подтверждение продажи</white>"
+    body: "<gray>Вы уверены, что хотите продать <white><amount>x <item></white> за <yellow>$<payout></yellow>?</gray>\n<gray>Ваш баланс: <yellow>$<balance></yellow></gray>"
+  input:
+    quantity_label: "<gray>Количество:</gray>"
+    promo_label: "<gray>Текст объявления:</gray>"
+  blackmarket:
+    title: "<white>Черный рынок</white>"
+    closed_title: "<white>Черный рынок закрыт</white>"
+    body: "<red>Добро пожаловать на Черный рынок. Скидка на все товары <yellow><discount></yellow>!</red>\n<gray>До окончания сессии: <aqua><remaining></aqua></gray>\n<gray>Ваш баланс: <yellow>$<balance></yellow></gray>\n<dark_gray>Внимание: Во время сделки движение заблокировано.</dark_gray>"
+  promosi:
+    title: "<white>Реклама</white>"
+    body: "<gray>Аренда автоматического показа объявлений на весь сервер.</gray>\n<gray>Цена: <yellow>$<cost></yellow> | Длительность: <yellow><duration> мин.</yellow></gray>\n<gray>Занято слотов: <yellow><active_count>/<max_slots></yellow> | Баланс: <yellow>$<balance></yellow></gray>"
+  jobs:
+    title: "<white>Профессии</white>"
+    no_job_title: "<white>Профессии</white>"
+    no_job_body: "<white>В данный момент у вас не выбрана профессия.</white>\n\n<gray>Система профессий позволяет зарабатывать <yellow>деньги</yellow> и <aqua>опыт профессии</aqua> за выполнение профильных действий.</gray>\n\n<gray>Преимущества и особенности:</gray>\n<gray>• <white>10 уникальных профессий</white> под любой стиль игры.</gray>\n<gray>• <green>Постоянный пассивный бафф</green> на 50 уровне.</gray>\n<gray>• <aqua>Аура союзников</aqua> в радиусе 10 блоков вокруг вас.</gray>\n\n<dark_gray>Выберите профессию кнопкой ниже или откройте руководство.</dark_gray>"
+    body: "<white>Информация о профессии:</white>\n\n<gray>Профессия: <yellow><job></yellow></gray>\n<gray>Уровень: <white><level></white><gray>/<max_level></gray> | Опыт: <aqua><exp></aqua><gray>/<req_exp></gray> (<green><exp_percent>%</green>)</gray>\n\n<gray>Собственный бафф (Ур. 50): <green><self_buff></green></gray>\n<gray>Аура для союзников: <aqua><aura_buff></aqua></gray>\n\n<dark_gray>Смена профессии стоит $<reset_cost> и сбрасывает уровень до 1.</dark_gray>"
+    select_title: "<white>Выбор профессии</white>"
+    select_body: "<gray>Выберите одну из 10 доступных профессий ниже для подробностей:</gray>"
+    btn_choose_now: "<green>Выбрать профессию сейчас</green>"
+    btn_change_job: "<gold>Сменить профессию</gold>"
+    btn_guide: "<yellow>Гайд и советы по профессиям</yellow>"
+    btn_main_menu: "<aqua>В главное меню</aqua>"
+    btn_select_job: "<green>Выбрать эту профессию</green>"
+  jobs_guide:
+    title: "<white>Гайд по профессиям</white>"
+    body: "<white>Руководство по системе профессий:</white>\n\n<yellow>1. Получение опыта и денег</yellow>\n<gray>Любое действие по выбранной специальности (например, копка руды у Шахтера, рубка леса у Лесоруба и т.д.) сразу зачисляет <yellow>деньги</yellow> на счет и приносит <aqua>опыт профессии</aqua>.</gray>\n\n<yellow>2. Прокачка и уровни</yellow>\n<gray>Максимальный уровень — <white>50 уровень</white>. С ростом уровня увеличивается доход за каждую активность.</gray>\n\n<yellow>3. Мастерство (50 Уровень)</yellow>\n<gray>На 50 уровне открывается <green>постоянный пассивный бафф</green> для вас, а также <aqua>аура</aqua>, которая периодически накладывает эффекты на игроков рядом (10 блоков).</gray>\n\n<yellow>4. Смена специальности</yellow>\n<gray>Сменить профессию можно в любое время за <yellow>$<reset_cost></yellow>. Прокачка новой профессии начнется с 1 уровня.</gray>"
+    btn_all_jobs: "<yellow>Список 10 профессий и баффов</yellow>"
+    list_title: "<white>Обзор профессий</white>"
+    list_body: "<gray>Выберите профессию, чтобы узнать действия и баффы 50 уровня:</gray>"
+  job_details:
+    title: "<white><job></white>"
+    body: "<white>Профессия: <yellow><job></yellow></white>\n<gray><description></gray>\n\n<white>Награды за 50 уровень:</white>\n<gray>• Собственный бафф: <green><self_buff></green></gray>\n<gray>• Аура для союзников: <aqua><aura_buff></aqua></gray>\n\n<white>Условия смены:</white>\n<gray>• Стоимость: <yellow>$<cost></yellow></gray>\n<gray>• Ваш баланс: <yellow>$<balance></yellow></gray>\n\n<dark_gray>Примечание: Смена профессии сбросит уровень на 1.</dark_gray>"
+  job_confirm:
+    title: "<white>Подтверждение смены профессии</white>"
+    body: "<red>Внимание: Смена профессии на <white><job></white> стоит <yellow>$<cost></yellow> и СБРОСИТ ваш уровень на 1!</red>\n\n<gray>Желаете продолжить?</gray>"

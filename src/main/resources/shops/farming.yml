@@ -1,0 +1,59 @@
+name: "Farming"
+icon: "WHEAT"
+description: "Agricultural seeds, crops, and produce"
+
+items:
+  wheat:
+    material: "WHEAT"
+    name: "Wheat"
+    buy_price: 8.0
+    sell_price: 3.0
+    description: "Freshly harvested grain"
+  carrot:
+    material: "CARROT"
+    name: "Carrot"
+    buy_price: 6.0
+    sell_price: 2.5
+    description: "Nutritious orange carrot"
+  potato:
+    material: "POTATO"
+    name: "Potato"
+    buy_price: 6.0
+    sell_price: 2.5
+    description: "Fresh potato"
+  beetroot:
+    material: "BEETROOT"
+    name: "Beetroot"
+    buy_price: 6.0
+    sell_price: 2.5
+    description: "Vibrant red root"
+  sugar_cane:
+    material: "SUGAR_CANE"
+    name: "Sugar Cane"
+    buy_price: 10.0
+    sell_price: 4.0
+    description: "Tall sweet cane"
+  pumpkin:
+    material: "PUMPKIN"
+    name: "Pumpkin"
+    buy_price: 15.0
+    sell_price: 6.0
+    description: "Solid orange pumpkin"
+  melon:
+    material: "MELON"
+    name: "Melon Slice"
+    buy_price: 5.0
+    sell_price: 2.0
+    description: "Refreshing melon slice"
+  sweet_berries:
+    material: "SWEET_BERRIES"
+    name: "Sweet Berries"
+    buy_price: 6.0
+    sell_price: 2.0
+    description: "Juicy forest berries"
+  nether_wart:
+    material: "NETHER_WART"
+    name: "Nether Wart"
+    buy_price: 25.0
+    sell_price: 10.0
+    description: "Crimson brewing fungus"

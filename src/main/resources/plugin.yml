@@ -1,0 +1,8 @@
+main: com.harukiyu.clarityeconomy.ClarityEconomy
+version: 1.0.0
+name: ClarityEconomy
+author: Harukiyu
+description: An integrated economy system featuring a Legal Market, Black Market, Daily Auction Arena, Promotional Service System via Dialog API, and a Level-based Jobs system with Aura Buff mechanics.
+api-version: 1.21
+
+

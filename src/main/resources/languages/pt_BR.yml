@@ -1,0 +1,154 @@
+prefix: "<gray>[<gold>Economia</gold>]</gray> "
+
+general:
+  btn_confirm: "<green>Confirmar</green>"
+  btn_cancel: "<red>Cancelar</red>"
+  btn_back: "<gray>Voltar</gray>"
+  btn_close: "<red>Fechar</red>"
+
+market:
+  btn_buy: "<green>Comprar</green>"
+  btn_sell: "<gold>Vender</gold>"
+  invalid_quantity: "<prefix><red>Quantidade inválida! Deve ser um número inteiro positivo.</red>"
+  not_enough_money: "<prefix><red>Você não tem dinheiro suficiente! Necessário: <yellow>$<cost></yellow>, Saldo: <yellow>$<balance></yellow>.</red>"
+  not_enough_items: "<prefix><red>Você não tem itens suficientes no inventário! Precisa: <yellow><required></yellow>, Possui: <yellow><have></yellow>.</red>"
+  economy_unavailable: "<prefix><red>O provedor de economia (Vault) não está ativo no momento.</red>"
+  transaction_failed: "<prefix><red>A transação não pôde ser concluída no momento.</red>"
+  buy_success: "<prefix><green>Comprou com sucesso <white><amount>x <item></white> por <yellow>$<cost></yellow>! Novo saldo: <yellow>$<balance></yellow>.</green>"
+  sell_success: "<prefix><green>Vendeu com sucesso <white><amount>x <item></white> por <yellow>$<payout></yellow>! Novo saldo: <yellow>$<balance></yellow>.</green>"
+
+blackmarket:
+  closed: "<prefix><red>O Mercado Negro está fechado no momento!</red>\n<gray>Horários de Funcionamento: <yellow><schedule></yellow>\nPróxima Abertura em: <aqua><remaining></aqua></gray>"
+  cooldown: "<prefix><red>Você deve aguardar <yellow><seconds>s</yellow> antes de negociar no Mercado Negro novamente.</red>"
+
+auction:
+  closed: "<prefix><red>A Arena de Leilões Diários está fechada no momento!</red>\n<gray>Horários: <yellow><schedule></yellow>\nPróxima Sessão em: <aqua><remaining></aqua></gray>"
+  location_not_set: "<prefix><red>A localização da arena de leilões ainda não foi configurada por um administrador.</red>"
+  teleport_success: "<prefix><green>Teleportando para a Arena de Leilões Diários...</green>"
+  teleport_failed: "<prefix><red>Falha ao teleportar para a arena de leilões.</red>"
+  location_saved: "<prefix><green>Localização da arena definida em <yellow><world></yellow> (<white><x>, <y>, <z></white>).</green>"
+
+promosi:
+  queue_full: "<prefix><red>Todas as <yellow><max></yellow> vagas de anúncio estão ocupadas! Tente novamente mais tarde.</red>"
+  cooldown: "<prefix><red>Você está no tempo de espera de promoção! Disponível em <yellow><time></yellow>.</red>"
+  not_enough_money: "<prefix><red>Você precisa de <yellow>$<cost></yellow> para alugar um anúncio! Seu saldo: <yellow>$<balance></yellow>.</red>"
+  empty_message: "<prefix><red>A mensagem do anúncio não pode estar vazia!</red>"
+  success: "<prefix><green>Seu anúncio foi aceito por <yellow>$<cost></yellow>! Será transmitido por <white><duration> minutos</white>. Intervalo: <white><cooldown> horas</white>.</green>"
+  broadcast_format: "<gold>----------------------------------------</gold>\n<yellow><bold>[ANÚNCIO COMERCIAL]</bold></yellow>\n<white><message></white>\n<gray>Patrocinado por: <yellow><player></yellow> | Contato: <yellow>/msg <player></yellow></gray>\n<gold>----------------------------------------</gold>"
+
+wtb:
+  broadcast: "<red><bold>ℹ <player> (<tag>)</bold></red>\n<white><player> está procurando</white>\n<white>Item Específico: <red><item></red></white>\n<gray>→</gray> <red>/msg <player></red> <white>se tiver interesse</white>"
+wts:
+  broadcast: "<red><bold>ℹ <player> (<tag>)</bold></red>\n<white><player> está vendendo</white>\n<white>Item Específico: <red><item></red></white>\n<gray>→</gray> <red>/msg <player></red> <white>se tiver interesse</white>"
+wta:
+  broadcast: "<red><bold>ℹ <player> (<tag>)</bold></red>\n<white><player> está perguntando</white>\n<white>Tópico / Item: <red><item></red></white>\n<gray>→</gray> <red>/msg <player></red> <white>se souber</white>"
+
+jobs:
+  level_up: "<prefix><green>Parabéns! Sua profissão de <white><job></white> alcançou o <yellow>Nível <level></yellow>!</green>"
+  max_level_reached: "<prefix><gold><bold>NÍVEL MÁXIMO ALCANÇADO!</bold> Você dominou <white><job></white>! Buff permanente ativado: <yellow><buff></yellow>.</gold>"
+  already_has_job: "<prefix><red>Você já está trabalhando como <yellow><job></yellow>!</red>"
+  not_enough_money: "<prefix><red>Você precisa de <yellow>$<cost></yellow> para mudar de profissão! Seu saldo: <yellow>$<balance></yellow>.</red>"
+  job_changed: "<prefix><green>Você mudou para a profissão de <white><job></white>! Taxa de alteração: <yellow>$<cost></yellow>.</green>"
+  btn_select_job: "<green>Escolher esta Profissão</green>"
+  btn_choose_now: "<green>Escolher Profissão Agora</green>"
+  btn_change_job: "<gold>Mudar de Profissão</gold>"
+  btn_guide: "<yellow>Guia & Dicas de Profissões</yellow>"
+  btn_main_menu: "<aqua>Voltar ao Menu Principal</aqua>"
+
+command:
+  admin:
+    reloaded: "<prefix><green>Configuração, lojas, mercado negro e pacotes de idiomas recarregados com sucesso.</green>"
+
+job:
+  hunter:
+    name: "Caçador"
+    description: "Ganhe XP e dinheiro derrotando monstros e criaturas hostis."
+  farmer:
+    name: "Fazendeiro"
+    description: "Ganhe XP e dinheiro plantando e colhendo produtos agrícolas."
+  miner:
+    name: "Minerador"
+    description: "Ganhe XP e dinheiro minerando minérios e pedras preciosas."
+  fisherman:
+    name: "Pescador"
+    description: "Ganhe XP e dinheiro pescando peixes e tesouros aquáticos."
+  explorer:
+    name: "Explorador"
+    description: "Ganhe XP e dinheiro descobrindo terras, caminhando, nadando e cavalgando."
+  breeder:
+    name: "Criador"
+    description: "Ganhe XP e dinheiro reproduzindo gado e animais domésticos."
+  blacksmith:
+    name: "Ferreiro"
+    description: "Ganhe XP e dinheiro fundindo metais e forjando equipamentos."
+  alchemist:
+    name: "Alquimista"
+    description: "Ganhe XP e dinheiro destilando e preparando poções mágicas."
+  lumberjack:
+    name: "Lenhador"
+    description: "Ganhe XP e dinheiro derrubando árvores e cortando troncos."
+  digger:
+    name: "Escavador"
+    description: "Ganhe XP e dinheiro escavando terra, areia, argila e cascalho."
+
+dialog:
+  general:
+    btn_confirm: "<green>Confirmar</green>"
+    btn_cancel: "<red>Cancelar</red>"
+    btn_back: "<gray>Voltar</gray>"
+    btn_close: "<red>Fechar</red>"
+  market:
+    title: "<white>Mercado</white>"
+    body: "<gray>Bem-vindo ao mercado oficial do servidor. Selecione uma categoria abaixo para navegar pelos itens.</gray>\n<gray>Seu saldo: <yellow>$<balance></yellow></gray>"
+  category:
+    title: "<white><category></white>"
+    body: "<gray>Selecione um item do catálogo <yellow><category></yellow> para comprar ou vender.</gray>\n<gray>Seu saldo: <yellow>$<balance></yellow></gray>"
+  item_action:
+    title: "<white><item></white>"
+    body: "<gray>Item: <white><item></white></gray>\n<gray>Preço de Compra: <green>$<buy_price></green></gray>\n<gray>Preço de Venda: <gold>$<sell_price></gold></gray>\n<gray>No Inventário: <yellow><inv_count></yellow></gray>\n<gray>Saldo: <yellow>$<balance></yellow></gray>"
+  buy_input:
+    title: "<white>Comprar <item></white>"
+    body: "<gray>Insira a quantidade de <white><item></white> que deseja comprar.</gray>\n<gray>Preço unitário: <green>$<unit_price></green> | Saldo: <yellow>$<balance></yellow></gray>"
+  buy_confirm:
+    title: "<white>Confirmar Compra</white>"
+    body: "<gray>Tem certeza de que deseja comprar <white><amount>x <item></white> por <yellow>$<cost></yellow>?</gray>\n<gray>Seu saldo: <yellow>$<balance></yellow></gray>"
+  sell_input:
+    title: "<white>Vender <item></white>"
+    body: "<gray>Insira a quantidade de <white><item></white> que deseja vender.</gray>\n<gray>Pagamento unitário: <gold>$<unit_payout></gold> | No Inventário: <yellow><inv_count></yellow></gray>"
+  sell_confirm:
+    title: "<white>Confirmar Venda</white>"
+    body: "<gray>Tem certeza de que deseja vender <white><amount>x <item></white> por <yellow>$<payout></yellow>?</gray>\n<gray>Seu saldo: <yellow>$<balance></yellow></gray>"
+  input:
+    quantity_label: "<gray>Quantidade:</gray>"
+    promo_label: "<gray>Mensagem do anúncio:</gray>"
+  blackmarket:
+    title: "<white>Mercado Negro</white>"
+    closed_title: "<white>Mercado Negro Fechado</white>"
+    body: "<red>Bem-vindo ao secreto Mercado Negro. Todos os itens com desconto de <yellow><discount></yellow>!</red>\n<gray>Tempo restante nesta sessão: <aqua><remaining></aqua></gray>\n<gray>Seu saldo: <yellow>$<balance></yellow></gray>\n<dark_gray>Aviso: Você não pode se mover durante as transações.</dark_gray>"
+  promosi:
+    title: "<white>Promoções</white>"
+    body: "<gray>Alugue uma transmissão automática de anúncios para todo o servidor.</gray>\n<gray>Custo: <yellow>$<cost></yellow> | Duração: <yellow><duration> minutos</yellow></gray>\n<gray>Vagas ativas: <yellow><active_count>/<max_slots></yellow> | Saldo: <yellow>$<balance></yellow></gray>"
+  jobs:
+    title: "<white>Profissões</white>"
+    no_job_title: "<white>Profissões</white>"
+    no_job_body: "<white>Você ainda não escolheu uma profissão ativa.</white>\n\n<gray>O sistema de profissões permite ganhar <yellow>dinheiro</yellow> e <aqua>XP de Profissão</aqua> sempre que realizar atividades do seu trabalho.</gray>\n\n<gray>Principais Vantagens:</gray>\n<gray>• <white>10 Profissões Únicas</white> adequadas ao seu estilo.</gray>\n<gray>• <green>Buff Passivo Permanente</green> liberado no Nível 50.</gray>\n<gray>• <aqua>Aura de Buff</aqua> compartilhada com aliados próximos (10 blocos).</gray>\n\n<dark_gray>Escolha sua profissão abaixo ou consulte o guia.</dark_gray>"
+    body: "<white>Detalhes da sua Profissão:</white>\n\n<gray>Profissão: <yellow><job></yellow></gray>\n<gray>Nível: <white><level></white><gray>/<max_level></gray> | EXP: <aqua><exp></aqua><gray>/<req_exp></gray> (<green><exp_percent>%</green>)</gray>\n\n<gray>Buff Próprio (Nv 50): <green><self_buff></green></gray>\n<gray>Aura para Aliados Próximos: <aqua><aura_buff></aqua></gray>\n\n<dark_gray>Nota: Trocar de profissão custa $<reset_cost> e reinicia o nível para 1.</dark_gray>"
+    select_title: "<white>Escolher Profissão</white>"
+    select_body: "<gray>Selecione uma das 10 profissões abaixo para ver detalhes ou trocar.</gray>"
+    btn_choose_now: "<green>Escolher Profissão Agora</green>"
+    btn_change_job: "<gold>Mudar de Profissão</gold>"
+    btn_guide: "<yellow>Guia & Dicas de Profissões</yellow>"
+    btn_main_menu: "<aqua>Voltar ao Menu Principal</aqua>"
+    btn_select_job: "<green>Escolher esta Profissão</green>"
+  jobs_guide:
+    title: "<white>Guia de Profissões</white>"
+    body: "<white>Guia do Sistema de Profissões:</white>\n\n<yellow>1. Ganho de EXP e Dinheiro</yellow>\n<gray>Toda ação correspondente à sua profissão (como minerar para o Minerador, cortar madeira para o Lenhador, pescar para o Pescador, etc.) credita <yellow>dinheiro</yellow> diretamente em sua conta e adiciona <aqua>XP de Profissão</aqua>.</gray>\n\n<yellow>2. Progressão e Níveis</yellow>\n<gray>O nível máximo é o <white>Nível 50</white>. Níveis mais altos aumentam os ganhos obtidos em cada atividade.</gray>\n\n<yellow>3. Buffs de Maestria (Nível 50)</yellow>\n<gray>Ao atingir o Nível 50 você desbloqueia um <green>Buff Passivo Permanente</green> para si mesmo e uma <aqua>Aura</aqua> que beneficia periodicamente jogadores em um raio de 10 blocos.</gray>\n\n<yellow>4. Troca de Profissão</yellow>\n<gray>Você pode mudar de profissão a qualquer momento pagando uma taxa de <yellow>$<reset_cost></yellow>. A nova profissão começará no Nível 1.</gray>"
+    btn_all_jobs: "<yellow>Ver Todas as 10 Profissões e Buffs</yellow>"
+    list_title: "<white>Visão Geral das Profissões</white>"
+    list_body: "<gray>Selecione uma profissão abaixo para ver detalhes de tarefas e buffs do Nível 50:</gray>"
+  job_details:
+    title: "<white><job></white>"
+    body: "<white>Profissão: <yellow><job></yellow></white>\n<gray><description></gray>\n\n<white>Recompensas do Nível Máximo (Nv 50):</white>\n<gray>• Buff Próprio: <green><self_buff></green></gray>\n<gray>• Aura para Jogadores Próximos: <aqua><aura_buff></aqua></gray>\n\n<white>Requisitos para Alteração:</white>\n<gray>• Taxa de Troca: <yellow>$<cost></yellow></gray>\n<gray>• Seu Saldo: <yellow>$<balance></yellow></gray>\n\n<dark_gray>Aviso: Mudar de profissão reinicia o nível para 1.</dark_gray>"
+  job_confirm:
+    title: "<white>Confirmar Mudança de Profissão</white>"
+    body: "<red>Aviso: Mudar para a profissão de <white><job></white> custará <yellow>$<cost></yellow> e REINICIARÁ seu nível para 1!</red>\n\n<gray>Deseja continuar?</gray>"

@@ -1,0 +1,47 @@
+# ==============================================================================
+#                      ClarityEconomy Configuration
+# ==============================================================================
+# Comprehensive economy solution for Paper 26.3 with Legal Market,
+# Black Market, Daily Auction Arena, Promotional Broadcasts & Jobs System.
+# ==============================================================================
+
+settings:
+  currency-symbol: "$"
+
+jobs:
+  max-level: 50
+  reset-cost: 50000.0
+  aura-radius: 10.0 # Radius in blocks to provide aura buffs to nearby players
+  base-exp: 100
+  exp-multiplier: 1.35
+
+black-market:
+  open-window-start: 6  # 06:00 WIB
+  open-window-end: 21   # 21:00 WIB
+  duration-hours: 2
+  cooldown-seconds: 60
+  freeze-player: true
+  price-discount-multiplier: 0.2 # 1/5 of standard price (80% discount)
+
+auction:
+  daily-sessions: 2
+  session-duration-hours: 4
+  arena-location:
+    world: "world"
+    x: 100.0
+    y: 64.0
+    z: -200.0
+    yaw: 0.0
+    pitch: 0.0
+
+promotion:
+  max-slots: 10
+  cooldown-hours: 3
+  duration-minutes: 360
+  cost: 10000.0
+  broadcast-interval-minutes: 5
+
+main_menu:
+  enable_back_to_main_menu: true
+  command: "menu"
+
