@@ -60,7 +60,7 @@ public class BedrockEconomyMenuManager {
 
         List<ShopCategory> categories = new ArrayList<>(plugin.getMarketManager().getCategories());
         for (ShopCategory cat : categories) {
-            builder.button("§0" + cat.getName() + "\n§7" + cat.getDescription());
+            builder.button("§0" + cat.getIconString() + " " + cat.getName() + "\n§7" + cat.getDescription());
         }
 
         builder.validResultHandler(response -> {
@@ -91,7 +91,7 @@ public class BedrockEconomyMenuManager {
             String price = (item.canBuy() ? "B: $" + VaultHook.formatMoney(item.getBuyPrice()) : "") +
                     (item.canBuy() && item.canSell() ? " | " : "") +
                     (item.canSell() ? "S: $" + VaultHook.formatMoney(item.getSellPrice()) : "");
-            builder.button("§0" + name + "\n§8" + price);
+            builder.button("§0" + item.getIcon() + " " + name + "\n§8" + price);
         }
 
         builder.button("§c« " + text(LanguageHook.getComponent("general.btn_back", player)));
@@ -338,7 +338,7 @@ public class BedrockEconomyMenuManager {
         for (ShopItem item : items) {
             double discounted = bm.getDiscountedPrice(item.getBuyPrice());
             String name = item.getName() != null ? item.getName() : Utils.formatMaterialName(item.getMaterial());
-            builder.button("§0" + name + "\n§2$" + VaultHook.formatMoney(discounted) + " §8(Orig: $" + VaultHook.formatMoney(item.getBuyPrice()) + ")");
+            builder.button("§0" + item.getIcon() + " " + name + "\n§2$" + VaultHook.formatMoney(discounted) + " §8(Orig: $" + VaultHook.formatMoney(item.getBuyPrice()) + ")");
         }
 
         builder.button("§c" + text(LanguageHook.getComponent("general.btn_close", player)));
@@ -384,15 +384,15 @@ public class BedrockEconomyMenuManager {
                     .title(text(title))
                     .content(text(body));
 
-            builder.button("§2★ " + text(LanguageHook.getComponent("dialog.jobs.btn_choose_now", player)));
-            builder.button("§e📖 " + text(LanguageHook.getComponent("dialog.jobs.btn_guide", player)));
+            builder.button(text(LanguageHook.getComponent("dialog.jobs.btn_choose_now", player)));
+            builder.button(text(LanguageHook.getComponent("dialog.jobs.btn_guide", player)));
 
             boolean hasMenu = plugin.getConfigManager().isEnableBackToMainMenu();
             if (hasMenu) {
-                builder.button("§b⌂ " + text(LanguageHook.getComponent("dialog.jobs.btn_main_menu", player)));
+                builder.button(text(LanguageHook.getComponent("dialog.jobs.btn_main_menu", player)));
             }
 
-            builder.button("§c✖ " + text(LanguageHook.getComponent("general.btn_close", player)));
+            builder.button(text(LanguageHook.getComponent("general.btn_close", player)));
 
             builder.validResultHandler(response -> {
                 int idx = response.clickedButtonId();
@@ -430,20 +430,20 @@ public class BedrockEconomyMenuManager {
                 .title(text(title))
                 .content(text(body));
 
-        builder.button("§2🔄 " + text(LanguageHook.getComponent("dialog.jobs.btn_change_job", player)));
-        builder.button("§e📖 " + text(LanguageHook.getComponent("dialog.jobs.btn_guide", player)));
+        builder.button(text(LanguageHook.getComponent("dialog.jobs.btn_details", player)));
+        builder.button(text(LanguageHook.getComponent("dialog.jobs.btn_guide", player)));
 
         boolean hasMenu = plugin.getConfigManager().isEnableBackToMainMenu();
         if (hasMenu) {
-            builder.button("§b⌂ " + text(LanguageHook.getComponent("dialog.jobs.btn_main_menu", player)));
+            builder.button(text(LanguageHook.getComponent("dialog.jobs.btn_main_menu", player)));
         }
 
-        builder.button("§c✖ " + text(LanguageHook.getComponent("general.btn_close", player)));
+        builder.button(text(LanguageHook.getComponent("general.btn_close", player)));
 
         builder.validResultHandler(response -> {
             int idx = response.clickedButtonId();
             if (idx == 0) {
-                runSync(() -> openJobSelectionMenu(player));
+                runSync(() -> openActiveJobDialog(player));
             } else if (idx == 1) {
                 runSync(() -> openJobsGuideMenu(player));
             } else if (hasMenu && idx == 2) {
@@ -468,10 +468,10 @@ public class BedrockEconomyMenuManager {
         JobType[] jobs = JobType.values();
         for (JobType job : jobs) {
             boolean isCurrent = (currentJob == job);
-            builder.button((isCurrent ? "§2★ " : "§0") + job.getDisplayName() + "\n§8" + job.getSelfBuffDesc());
+            builder.button((isCurrent ? "★ " : "") + job.getDisplayName() + "\n§8" + job.getSelfBuffDesc());
         }
 
-        builder.button("§c« " + text(LanguageHook.getComponent("general.btn_back", player)));
+        builder.button(text(LanguageHook.getComponent("general.btn_back", player)));
 
         builder.validResultHandler(response -> {
             int idx = response.clickedButtonId();
@@ -505,7 +505,7 @@ public class BedrockEconomyMenuManager {
             SimpleForm form = SimpleForm.builder()
                     .title(text(title))
                     .content(text(body))
-                    .button("§c« " + text(LanguageHook.getComponent("general.btn_back", player)))
+                    .button(text(LanguageHook.getComponent("general.btn_back", player)))
                     .validResultHandler(response -> runSync(() -> openJobSelectionMenu(player)))
                     .build();
             BedrockFormHook.sendForm(player, form);
@@ -515,13 +515,145 @@ public class BedrockEconomyMenuManager {
         ModalForm form = ModalForm.builder()
                 .title(text(title))
                 .content(text(body))
-                .button1("§2" + text(LanguageHook.getComponent("jobs.btn_select_job", player)))
-                .button2("§c« " + text(LanguageHook.getComponent("general.btn_back", player)))
+                .button1(text(LanguageHook.getComponent("jobs.btn_select_job", player)))
+                .button2(text(LanguageHook.getComponent("general.btn_back", player)))
                 .validResultHandler(response -> {
                     if (response.clickedFirst()) {
                         runSync(() -> plugin.getJobsManager().changeJob(player, job));
                     } else {
                         runSync(() -> openJobSelectionMenu(player));
+                    }
+                })
+                .build();
+
+        BedrockFormHook.sendForm(player, form);
+    }
+
+    public void openActiveJobDialog(@NotNull Player player) {
+        PlayerJobData data = plugin.getJobsManager().getPlayerData(player.getUniqueId());
+        JobType job = data.getJobType();
+        if (job == null) {
+            openJobsMenu(player);
+            return;
+        }
+
+        int maxLvl = plugin.getConfigManager().getJobMaxLevel();
+        long reqExp = plugin.getJobsManager().calculateRequiredExp(data.getLevel());
+        double expPercent = reqExp > 0 ? Math.min(100.0, ((double) data.getCurrentExp() / reqExp) * 100.0) : 100.0;
+        double resetCost = plugin.getConfigManager().getJobResetCost();
+
+        Component title = LanguageHook.getComponent("dialog.jobs.active_title", player,
+                Placeholder.unparsed("job", job.getDisplayName()));
+        Component body = LanguageHook.getComponent("dialog.jobs.active_body", player,
+                Placeholder.unparsed("job", job.getDisplayName()),
+                Placeholder.unparsed("level", String.valueOf(data.getLevel())),
+                Placeholder.unparsed("max_level", String.valueOf(maxLvl)),
+                Placeholder.unparsed("exp", String.valueOf(data.getCurrentExp())),
+                Placeholder.unparsed("req_exp", data.getLevel() >= maxLvl ? "MAX" : String.valueOf(reqExp)),
+                Placeholder.unparsed("exp_percent", String.format("%.1f", expPercent)),
+                Placeholder.unparsed("description", LanguageHook.getRawString(job.getDescriptionKey(), LanguageHook.getEffectiveLanguageCode(player))),
+                Placeholder.unparsed("self_buff", job.getSelfBuffDesc()),
+                Placeholder.unparsed("aura_buff", job.getAuraBuffDesc()),
+                Placeholder.unparsed("cost", VaultHook.formatMoney(resetCost)),
+                Placeholder.unparsed("balance", VaultHook.formatMoney(VaultHook.getBalance(player))));
+
+        SimpleForm form = SimpleForm.builder()
+                .title(text(title))
+                .content(text(body))
+                .button(text(LanguageHook.getComponent("dialog.jobs.btn_quests", player)))
+                .button(text(LanguageHook.getComponent("dialog.jobs.btn_resign", player)))
+                .button(text(LanguageHook.getComponent("general.btn_back", player)))
+                .button(text(LanguageHook.getComponent("general.btn_close", player)))
+                .validResultHandler(response -> {
+                    int idx = response.clickedButtonId();
+                    if (idx == 0) {
+                        runSync(() -> openJobQuestsDialog(player, job));
+                    } else if (idx == 1) {
+                        runSync(() -> openJobResignConfirmDialog(player, job));
+                    } else if (idx == 2) {
+                        runSync(() -> openJobsMenu(player));
+                    }
+                })
+                .build();
+
+        BedrockFormHook.sendForm(player, form);
+    }
+
+    public void openJobQuestsDialog(@NotNull Player player, @NotNull JobType job) {
+        PlayerJobData data = plugin.getJobsManager().getPlayerData(player.getUniqueId());
+        Component title = LanguageHook.getComponent("dialog.jobs.quests_title", player,
+                Placeholder.unparsed("job", job.getDisplayName()));
+        Component body = LanguageHook.getComponent("dialog.jobs.quests_body", player,
+                Placeholder.unparsed("job", job.getDisplayName()),
+                Placeholder.unparsed("level", String.valueOf(data.getLevel())));
+
+        SimpleForm form = SimpleForm.builder()
+                .title(text(title))
+                .content(text(body))
+                .button(text(LanguageHook.getComponent("dialog.jobs.btn_quest_daily", player)))
+                .button(text(LanguageHook.getComponent("dialog.jobs.btn_quest_specialist", player)))
+                .button(text(LanguageHook.getComponent("dialog.jobs.btn_quest_milestone", player)))
+                .button(text(LanguageHook.getComponent("general.btn_back", player)))
+                .button(text(LanguageHook.getComponent("general.btn_close", player)))
+                .validResultHandler(response -> {
+                    int idx = response.clickedButtonId();
+                    if (idx == 0) {
+                        runSync(() -> openQuestDetailNotice(player, job, LanguageHook.getRawString("dialog.jobs.btn_quest_daily", LanguageHook.getEffectiveLanguageCode(player))));
+                    } else if (idx == 1) {
+                        runSync(() -> openQuestDetailNotice(player, job, LanguageHook.getRawString("dialog.jobs.btn_quest_specialist", LanguageHook.getEffectiveLanguageCode(player))));
+                    } else if (idx == 2) {
+                        runSync(() -> openQuestDetailNotice(player, job, LanguageHook.getRawString("dialog.jobs.btn_quest_milestone", LanguageHook.getEffectiveLanguageCode(player))));
+                    } else if (idx == 3) {
+                        runSync(() -> openActiveJobDialog(player));
+                    }
+                })
+                .build();
+
+        BedrockFormHook.sendForm(player, form);
+    }
+
+    public void openQuestDetailNotice(@NotNull Player player, @NotNull JobType job, @NotNull String categoryName) {
+        Component title = LanguageHook.getComponent("dialog.jobs.quest_detail_title", player,
+                Placeholder.unparsed("category", categoryName));
+        Component body = LanguageHook.getComponent("dialog.jobs.quest_detail_body", player,
+                Placeholder.unparsed("category", categoryName),
+                Placeholder.unparsed("job", job.getDisplayName()));
+
+        SimpleForm form = SimpleForm.builder()
+                .title(text(title))
+                .content(text(body))
+                .button(text(LanguageHook.getComponent("general.btn_back", player)))
+                .validResultHandler(response -> runSync(() -> openJobQuestsDialog(player, job)))
+                .build();
+
+        BedrockFormHook.sendForm(player, form);
+    }
+
+    public void openJobResignConfirmDialog(@NotNull Player player, @NotNull JobType job) {
+        double cost = plugin.getConfigManager().getJobResetCost();
+        Component title = LanguageHook.getComponent("dialog.jobs.resign_title", player);
+        Component body = LanguageHook.getComponent("dialog.jobs.resign_body", player,
+                Placeholder.unparsed("job", job.getDisplayName()),
+                Placeholder.unparsed("cost", VaultHook.formatMoney(cost)),
+                Placeholder.unparsed("balance", VaultHook.formatMoney(VaultHook.getBalance(player))));
+
+        ModalForm form = ModalForm.builder()
+                .title(text(title))
+                .content(text(body))
+                .button1(text(LanguageHook.getComponent("dialog.jobs.btn_confirm_resign", player)))
+                .button2(text(LanguageHook.getComponent("general.btn_cancel", player)))
+                .validResultHandler(response -> {
+                    if (response.clickedFirst()) {
+                        runSync(() -> {
+                            boolean ok = plugin.getJobsManager().resignJob(player);
+                            if (ok) {
+                                openJobsMenu(player);
+                            } else {
+                                openActiveJobDialog(player);
+                            }
+                        });
+                    } else {
+                        runSync(() -> openActiveJobDialog(player));
                     }
                 })
                 .build();
@@ -537,8 +669,8 @@ public class BedrockEconomyMenuManager {
         SimpleForm form = SimpleForm.builder()
                 .title(text(title))
                 .content(text(body))
-                .button("§e📋 " + text(LanguageHook.getComponent("dialog.jobs_guide.btn_all_jobs", player)))
-                .button("§c« " + text(LanguageHook.getComponent("general.btn_back", player)))
+                .button(text(LanguageHook.getComponent("dialog.jobs_guide.btn_all_jobs", player)))
+                .button(text(LanguageHook.getComponent("general.btn_back", player)))
                 .validResultHandler(response -> {
                     if (response.clickedButtonId() == 0) {
                         runSync(() -> openJobsGuideListDialog(player));
@@ -561,10 +693,10 @@ public class BedrockEconomyMenuManager {
 
         JobType[] jobs = JobType.values();
         for (JobType job : jobs) {
-            builder.button("§0" + job.getDisplayName() + "\n§8" + job.getSelfBuffDesc());
+            builder.button(job.getDisplayName() + "\n§8" + job.getSelfBuffDesc());
         }
 
-        builder.button("§c« " + text(LanguageHook.getComponent("general.btn_back", player)));
+        builder.button(text(LanguageHook.getComponent("general.btn_back", player)));
 
         builder.validResultHandler(response -> {
             int idx = response.clickedButtonId();

@@ -58,7 +58,7 @@ public class EconomyDialogManager {
 
         List<ActionButton> buttons = new ArrayList<>();
         for (ShopCategory category : plugin.getMarketManager().getCategories()) {
-            Component btnLabel = Component.text(category.getName());
+            Component btnLabel = Component.text(category.getIconString() + " " + category.getName());
             Component tooltip = Component.text(category.getDescription());
 
             buttons.add(ActionButton.builder(btnLabel)
@@ -107,7 +107,7 @@ public class EconomyDialogManager {
                     (item.canBuy() && item.canSell() ? " | " : "") +
                     (item.canSell() ? "S: $" + VaultHook.formatMoney(item.getSellPrice()) : "");
 
-            Component btnLabel = Component.text(name);
+            Component btnLabel = Component.text(item.getIcon() + " " + name);
             Component tooltip = Component.text(priceDesc + (item.getDescription() != null ? " - " + item.getDescription() : ""));
 
             buttons.add(ActionButton.builder(btnLabel)
@@ -467,7 +467,7 @@ public class EconomyDialogManager {
             double discounted = bm.getDiscountedPrice(item.getBuyPrice());
             String name = item.getName() != null ? item.getName() : Utils.formatMaterialName(item.getMaterial());
 
-            Component btnLabel = Component.text(name + " ($" + VaultHook.formatMoney(discounted) + ")");
+            Component btnLabel = Component.text(item.getIcon() + " " + name + " ($" + VaultHook.formatMoney(discounted) + ")");
             Component tooltip = Component.text((item.getDescription() != null ? item.getDescription() + " - " : "") +
                     "Normal: $" + VaultHook.formatMoney(item.getBuyPrice()) + " -> Deal: $" + VaultHook.formatMoney(discounted));
 
@@ -590,10 +590,10 @@ public class EconomyDialogManager {
 
         List<ActionButton> buttons = new ArrayList<>();
 
-        // 1. Switch / Change Job Button
-        buttons.add(ActionButton.builder(LanguageHook.getComponent("dialog.jobs.btn_change_job", player))
+        // 1. Detail Job Button (opens active job details)
+        buttons.add(ActionButton.builder(LanguageHook.getComponent("dialog.jobs.btn_details", player))
                 .action(DialogAction.customClick((view, audience) -> {
-                    if (audience instanceof Player p) openJobSelectionMenu(p);
+                    if (audience instanceof Player p) openActiveJobDialog(p);
                 }, CALLBACK_OPTIONS))
                 .build());
 
@@ -774,6 +774,224 @@ public class EconomyDialogManager {
         ActionButton noBtn = ActionButton.builder(LanguageHook.getComponent("general.btn_cancel", player))
                 .action(DialogAction.customClick((view, audience) -> {
                     if (audience instanceof Player p) openJobDetailsDialog(p, job);
+                }, CALLBACK_OPTIONS))
+                .build();
+
+        Dialog dialog = Dialog.create(builder -> builder.empty()
+                .base(DialogBase.builder(title)
+                        .body(List.of(DialogBody.plainMessage(body)))
+                        .canCloseWithEscape(true)
+                        .pause(false)
+                        .afterAction(DialogBase.DialogAfterAction.NONE)
+                        .build())
+                .type(DialogType.confirmation(yesBtn, noBtn))
+        );
+
+        player.showDialog(dialog);
+    }
+
+    public void openActiveJobDialog(@NotNull Player player) {
+        if (BedrockFormHook.isBedrockPlayer(player)) {
+            plugin.getBedrockMenuManager().openActiveJobDialog(player);
+            return;
+        }
+
+        PlayerJobData data = plugin.getJobsManager().getPlayerData(player.getUniqueId());
+        JobType job = data.getJobType();
+        if (job == null) {
+            openJobsMenu(player);
+            return;
+        }
+
+        int maxLvl = plugin.getConfigManager().getJobMaxLevel();
+        long reqExp = plugin.getJobsManager().calculateRequiredExp(data.getLevel());
+        double expPercent = reqExp > 0 ? Math.min(100.0, ((double) data.getCurrentExp() / reqExp) * 100.0) : 100.0;
+        double resetCost = plugin.getConfigManager().getJobResetCost();
+
+        Component title = LanguageHook.getComponent("dialog.jobs.active_title", player,
+                Placeholder.unparsed("job", job.getDisplayName()));
+        Component body = LanguageHook.getComponent("dialog.jobs.active_body", player,
+                Placeholder.unparsed("job", job.getDisplayName()),
+                Placeholder.unparsed("level", String.valueOf(data.getLevel())),
+                Placeholder.unparsed("max_level", String.valueOf(maxLvl)),
+                Placeholder.unparsed("exp", String.valueOf(data.getCurrentExp())),
+                Placeholder.unparsed("req_exp", data.getLevel() >= maxLvl ? "MAX" : String.valueOf(reqExp)),
+                Placeholder.unparsed("exp_percent", String.format("%.1f", expPercent)),
+                Placeholder.unparsed("description", LanguageHook.getRawString(job.getDescriptionKey(), LanguageHook.getEffectiveLanguageCode(player))),
+                Placeholder.unparsed("self_buff", job.getSelfBuffDesc()),
+                Placeholder.unparsed("aura_buff", job.getAuraBuffDesc()),
+                Placeholder.unparsed("cost", VaultHook.formatMoney(resetCost)),
+                Placeholder.unparsed("balance", VaultHook.formatMoney(VaultHook.getBalance(player))));
+
+        List<ActionButton> buttons = new ArrayList<>();
+
+        // Button 1: Quest Pekerjaan
+        buttons.add(ActionButton.builder(LanguageHook.getComponent("dialog.jobs.btn_quests", player))
+                .action(DialogAction.customClick((view, audience) -> {
+                    if (audience instanceof Player p) openJobQuestsDialog(p, job);
+                }, CALLBACK_OPTIONS))
+                .build());
+
+        // Button 2: Keluar dari Pekerjaan (Resign)
+        buttons.add(ActionButton.builder(LanguageHook.getComponent("dialog.jobs.btn_resign", player))
+                .action(DialogAction.customClick((view, audience) -> {
+                    if (audience instanceof Player p) openJobResignConfirmDialog(p, job);
+                }, CALLBACK_OPTIONS))
+                .build());
+
+        // Button 3: Kembali ke menu /jobs
+        ActionButton backBtn = ActionButton.builder(LanguageHook.getComponent("general.btn_back", player))
+                .action(DialogAction.customClick((view, audience) -> {
+                    if (audience instanceof Player p) openJobsMenu(p);
+                }, CALLBACK_OPTIONS))
+                .build();
+        buttons.add(backBtn);
+
+        // Close Button
+        ActionButton exitBtn = ActionButton.builder(LanguageHook.getComponent("general.btn_close", player))
+                .action(DialogAction.customClick((view, audience) -> {
+                    if (audience instanceof Player p) Utils.forceCloseScreen(p);
+                }, CALLBACK_OPTIONS))
+                .build();
+
+        Dialog dialog = Dialog.create(builder -> builder.empty()
+                .base(DialogBase.builder(title)
+                        .body(List.of(DialogBody.plainMessage(body)))
+                        .canCloseWithEscape(true)
+                        .pause(false)
+                        .afterAction(DialogBase.DialogAfterAction.NONE)
+                        .build())
+                .type(DialogType.multiAction(buttons, exitBtn, 1))
+        );
+
+        player.showDialog(dialog);
+    }
+
+    public void openJobQuestsDialog(@NotNull Player player, @NotNull JobType job) {
+        if (BedrockFormHook.isBedrockPlayer(player)) {
+            plugin.getBedrockMenuManager().openJobQuestsDialog(player, job);
+            return;
+        }
+
+        PlayerJobData data = plugin.getJobsManager().getPlayerData(player.getUniqueId());
+        Component title = LanguageHook.getComponent("dialog.jobs.quests_title", player,
+                Placeholder.unparsed("job", job.getDisplayName()));
+        Component body = LanguageHook.getComponent("dialog.jobs.quests_body", player,
+                Placeholder.unparsed("job", job.getDisplayName()),
+                Placeholder.unparsed("level", String.valueOf(data.getLevel())));
+
+        List<ActionButton> buttons = new ArrayList<>();
+
+        // Category 1: Misi Harian
+        buttons.add(ActionButton.builder(LanguageHook.getComponent("dialog.jobs.btn_quest_daily", player))
+                .action(DialogAction.customClick((view, audience) -> {
+                    if (audience instanceof Player p) {
+                        openQuestDetailNotice(p, job, LanguageHook.getRawString("dialog.jobs.btn_quest_daily", LanguageHook.getEffectiveLanguageCode(p)));
+                    }
+                }, CALLBACK_OPTIONS))
+                .build());
+
+        // Category 2: Tantangan Spesialis
+        buttons.add(ActionButton.builder(LanguageHook.getComponent("dialog.jobs.btn_quest_specialist", player))
+                .action(DialogAction.customClick((view, audience) -> {
+                    if (audience instanceof Player p) {
+                        openQuestDetailNotice(p, job, LanguageHook.getRawString("dialog.jobs.btn_quest_specialist", LanguageHook.getEffectiveLanguageCode(p)));
+                    }
+                }, CALLBACK_OPTIONS))
+                .build());
+
+        // Category 3: Milestone Tingkat
+        buttons.add(ActionButton.builder(LanguageHook.getComponent("dialog.jobs.btn_quest_milestone", player))
+                .action(DialogAction.customClick((view, audience) -> {
+                    if (audience instanceof Player p) {
+                        openQuestDetailNotice(p, job, LanguageHook.getRawString("dialog.jobs.btn_quest_milestone", LanguageHook.getEffectiveLanguageCode(p)));
+                    }
+                }, CALLBACK_OPTIONS))
+                .build());
+
+        // Back Button
+        ActionButton backBtn = ActionButton.builder(LanguageHook.getComponent("general.btn_back", player))
+                .action(DialogAction.customClick((view, audience) -> {
+                    if (audience instanceof Player p) openActiveJobDialog(p);
+                }, CALLBACK_OPTIONS))
+                .build();
+        buttons.add(backBtn);
+
+        // Close Button
+        ActionButton exitBtn = ActionButton.builder(LanguageHook.getComponent("general.btn_close", player))
+                .action(DialogAction.customClick((view, audience) -> {
+                    if (audience instanceof Player p) Utils.forceCloseScreen(p);
+                }, CALLBACK_OPTIONS))
+                .build();
+
+        Dialog dialog = Dialog.create(builder -> builder.empty()
+                .base(DialogBase.builder(title)
+                        .body(List.of(DialogBody.plainMessage(body)))
+                        .canCloseWithEscape(true)
+                        .pause(false)
+                        .afterAction(DialogBase.DialogAfterAction.NONE)
+                        .build())
+                .type(DialogType.multiAction(buttons, exitBtn, 1))
+        );
+
+        player.showDialog(dialog);
+    }
+
+    public void openQuestDetailNotice(@NotNull Player player, @NotNull JobType job, @NotNull String categoryName) {
+        Component title = LanguageHook.getComponent("dialog.jobs.quest_detail_title", player,
+                Placeholder.unparsed("category", categoryName));
+        Component body = LanguageHook.getComponent("dialog.jobs.quest_detail_body", player,
+                Placeholder.unparsed("category", categoryName),
+                Placeholder.unparsed("job", job.getDisplayName()));
+
+        ActionButton backBtn = ActionButton.builder(LanguageHook.getComponent("general.btn_back", player))
+                .action(DialogAction.customClick((view, audience) -> {
+                    if (audience instanceof Player p) openJobQuestsDialog(p, job);
+                }, CALLBACK_OPTIONS))
+                .build();
+
+        Dialog dialog = Dialog.create(builder -> builder.empty()
+                .base(DialogBase.builder(title)
+                        .body(List.of(DialogBody.plainMessage(body)))
+                        .canCloseWithEscape(true)
+                        .pause(false)
+                        .afterAction(DialogBase.DialogAfterAction.NONE)
+                        .build())
+                .type(DialogType.notice(backBtn))
+        );
+
+        player.showDialog(dialog);
+    }
+
+    public void openJobResignConfirmDialog(@NotNull Player player, @NotNull JobType job) {
+        if (BedrockFormHook.isBedrockPlayer(player)) {
+            plugin.getBedrockMenuManager().openJobResignConfirmDialog(player, job);
+            return;
+        }
+
+        double cost = plugin.getConfigManager().getJobResetCost();
+        Component title = LanguageHook.getComponent("dialog.jobs.resign_title", player);
+        Component body = LanguageHook.getComponent("dialog.jobs.resign_body", player,
+                Placeholder.unparsed("job", job.getDisplayName()),
+                Placeholder.unparsed("cost", VaultHook.formatMoney(cost)),
+                Placeholder.unparsed("balance", VaultHook.formatMoney(VaultHook.getBalance(player))));
+
+        ActionButton yesBtn = ActionButton.builder(LanguageHook.getComponent("dialog.jobs.btn_confirm_resign", player))
+                .action(DialogAction.customClick((view, audience) -> {
+                    if (audience instanceof Player p) {
+                        boolean ok = plugin.getJobsManager().resignJob(p);
+                        if (ok) {
+                            openJobsMenu(p);
+                        } else {
+                            openActiveJobDialog(p);
+                        }
+                    }
+                }, CALLBACK_OPTIONS))
+                .build();
+
+        ActionButton noBtn = ActionButton.builder(LanguageHook.getComponent("general.btn_cancel", player))
+                .action(DialogAction.customClick((view, audience) -> {
+                    if (audience instanceof Player p) openActiveJobDialog(p);
                 }, CALLBACK_OPTIONS))
                 .build();
 
