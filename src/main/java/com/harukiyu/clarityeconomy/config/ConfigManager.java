@@ -94,7 +94,7 @@ public class ConfigManager {
             return;
         }
         String worldName = config.getString("auction.arena-location.world", "world");
-        World world = Bukkit.getWorld(worldName);
+        World world = worldName != null ? Bukkit.getWorld(worldName) : null;
         if (world == null && !Bukkit.getWorlds().isEmpty()) {
             world = Bukkit.getWorlds().getFirst();
         }

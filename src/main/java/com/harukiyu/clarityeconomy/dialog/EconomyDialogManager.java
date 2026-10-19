@@ -886,7 +886,8 @@ public class EconomyDialogManager {
         buttons.add(ActionButton.builder(LanguageHook.getComponent("dialog.jobs.btn_quest_daily", player))
                 .action(DialogAction.customClick((view, audience) -> {
                     if (audience instanceof Player p) {
-                        openQuestDetailNotice(p, job, LanguageHook.getRawString("dialog.jobs.btn_quest_daily", LanguageHook.getEffectiveLanguageCode(p)));
+                        String cat = LanguageHook.getRawString("dialog.jobs.btn_quest_daily", LanguageHook.getEffectiveLanguageCode(p));
+                        openQuestDetailNotice(p, job, cat != null ? cat : "Misi Harian");
                     }
                 }, CALLBACK_OPTIONS))
                 .build());
@@ -895,7 +896,8 @@ public class EconomyDialogManager {
         buttons.add(ActionButton.builder(LanguageHook.getComponent("dialog.jobs.btn_quest_specialist", player))
                 .action(DialogAction.customClick((view, audience) -> {
                     if (audience instanceof Player p) {
-                        openQuestDetailNotice(p, job, LanguageHook.getRawString("dialog.jobs.btn_quest_specialist", LanguageHook.getEffectiveLanguageCode(p)));
+                        String cat = LanguageHook.getRawString("dialog.jobs.btn_quest_specialist", LanguageHook.getEffectiveLanguageCode(p));
+                        openQuestDetailNotice(p, job, cat != null ? cat : "Tantangan Spesialis");
                     }
                 }, CALLBACK_OPTIONS))
                 .build());
@@ -904,7 +906,8 @@ public class EconomyDialogManager {
         buttons.add(ActionButton.builder(LanguageHook.getComponent("dialog.jobs.btn_quest_milestone", player))
                 .action(DialogAction.customClick((view, audience) -> {
                     if (audience instanceof Player p) {
-                        openQuestDetailNotice(p, job, LanguageHook.getRawString("dialog.jobs.btn_quest_milestone", LanguageHook.getEffectiveLanguageCode(p)));
+                        String cat = LanguageHook.getRawString("dialog.jobs.btn_quest_milestone", LanguageHook.getEffectiveLanguageCode(p));
+                        openQuestDetailNotice(p, job, cat != null ? cat : "Milestone Tingkat");
                     }
                 }, CALLBACK_OPTIONS))
                 .build());

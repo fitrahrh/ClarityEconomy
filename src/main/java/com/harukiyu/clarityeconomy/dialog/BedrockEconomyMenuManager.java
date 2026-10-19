@@ -143,12 +143,10 @@ public class BedrockEconomyMenuManager {
             int idx = response.clickedButtonId();
             if (idx >= 0 && idx < actions.size()) {
                 String act = actions.get(idx);
-                if ("BUY".equals(act)) {
-                    runSync(() -> openBuyQuantityDialog(player, category, item, false, item.getBuyPrice()));
-                } else if ("SELL".equals(act)) {
-                    runSync(() -> openSellQuantityDialog(player, category, item, item.getSellPrice()));
-                } else if ("BACK".equals(act)) {
-                    runSync(() -> openCategoryMenu(player, category));
+                switch (act) {
+                    case "BUY" -> runSync(() -> openBuyQuantityDialog(player, category, item, false, item.getBuyPrice()));
+                    case "SELL" -> runSync(() -> openSellQuantityDialog(player, category, item, item.getSellPrice()));
+                    case "BACK" -> runSync(() -> openCategoryMenu(player, category));
                 }
             }
         });
@@ -565,13 +563,10 @@ public class BedrockEconomyMenuManager {
                 .button(text(LanguageHook.getComponent("general.btn_back", player)))
                 .button(text(LanguageHook.getComponent("general.btn_close", player)))
                 .validResultHandler(response -> {
-                    int idx = response.clickedButtonId();
-                    if (idx == 0) {
-                        runSync(() -> openJobQuestsDialog(player, job));
-                    } else if (idx == 1) {
-                        runSync(() -> openJobResignConfirmDialog(player, job));
-                    } else if (idx == 2) {
-                        runSync(() -> openJobsMenu(player));
+                    switch (response.clickedButtonId()) {
+                        case 0 -> runSync(() -> openJobQuestsDialog(player, job));
+                        case 1 -> runSync(() -> openJobResignConfirmDialog(player, job));
+                        case 2 -> runSync(() -> openJobsMenu(player));
                     }
                 })
                 .build();
@@ -596,15 +591,21 @@ public class BedrockEconomyMenuManager {
                 .button(text(LanguageHook.getComponent("general.btn_back", player)))
                 .button(text(LanguageHook.getComponent("general.btn_close", player)))
                 .validResultHandler(response -> {
-                    int idx = response.clickedButtonId();
-                    if (idx == 0) {
-                        runSync(() -> openQuestDetailNotice(player, job, LanguageHook.getRawString("dialog.jobs.btn_quest_daily", LanguageHook.getEffectiveLanguageCode(player))));
-                    } else if (idx == 1) {
-                        runSync(() -> openQuestDetailNotice(player, job, LanguageHook.getRawString("dialog.jobs.btn_quest_specialist", LanguageHook.getEffectiveLanguageCode(player))));
-                    } else if (idx == 2) {
-                        runSync(() -> openQuestDetailNotice(player, job, LanguageHook.getRawString("dialog.jobs.btn_quest_milestone", LanguageHook.getEffectiveLanguageCode(player))));
-                    } else if (idx == 3) {
-                        runSync(() -> openActiveJobDialog(player));
+                    String lang = LanguageHook.getEffectiveLanguageCode(player);
+                    switch (response.clickedButtonId()) {
+                        case 0 -> {
+                            String cat = LanguageHook.getRawString("dialog.jobs.btn_quest_daily", lang);
+                            runSync(() -> openQuestDetailNotice(player, job, cat != null ? cat : "Misi Harian"));
+                        }
+                        case 1 -> {
+                            String cat = LanguageHook.getRawString("dialog.jobs.btn_quest_specialist", lang);
+                            runSync(() -> openQuestDetailNotice(player, job, cat != null ? cat : "Tantangan Spesialis"));
+                        }
+                        case 2 -> {
+                            String cat = LanguageHook.getRawString("dialog.jobs.btn_quest_milestone", lang);
+                            runSync(() -> openQuestDetailNotice(player, job, cat != null ? cat : "Milestone Tingkat"));
+                        }
+                        case 3 -> runSync(() -> openActiveJobDialog(player));
                     }
                 })
                 .build();
@@ -728,7 +729,7 @@ public class BedrockEconomyMenuManager {
                     }
                 }
             }
-        } catch (Throwable ignored) {}
+        } catch (ReflectiveOperationException | SecurityException ignored) {}
 
         // 2. Fallback command
         String cmd = plugin.getConfigManager().getMainMenuCommand();
@@ -736,7 +737,7 @@ public class BedrockEconomyMenuManager {
             String cleanCmd = cmd.startsWith("/") ? cmd.substring(1) : cmd;
             try {
                 player.performCommand(cleanCmd);
-            } catch (Throwable ignored) {}
+            } catch (Exception ignored) {}
         }
     }
 

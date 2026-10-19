@@ -18,6 +18,9 @@ public class MarketCommand implements BasicCommand {
     @Override
     public void execute(@NotNull CommandSourceStack stack, @NotNull String[] args) {
         CommandSender sender = stack.getSender();
+        if (sender == null) {
+            return;
+        }
         if (!(sender instanceof Player player)) {
             sender.sendMessage("Only players can open the Market menu.");
             return;
