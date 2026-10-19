@@ -23,6 +23,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 
+@SuppressWarnings("null")
 public final class LanguageHook {
 
     private static String namespace = "clarityeconomy";
@@ -44,6 +45,9 @@ public final class LanguageHook {
             Map.entry("dialog.general.btn_back", "general.btn_back"),
             Map.entry("general.btn_close", "dialog.general.btn_close"),
             Map.entry("dialog.general.btn_close", "general.btn_close"),
+            Map.entry("general.btn_sell_all", "dialog.general.btn_sell_all"),
+            Map.entry("dialog.general.btn_sell_all", "general.btn_sell_all"),
+            Map.entry("market.btn_sell_all", "dialog.general.btn_sell_all"),
             Map.entry("jobs.btn_select_job", "dialog.jobs.btn_select_job"),
             Map.entry("dialog.jobs.btn_select_job", "jobs.btn_select_job"),
             Map.entry("jobs.btn_choose_now", "dialog.jobs.btn_choose_now"),

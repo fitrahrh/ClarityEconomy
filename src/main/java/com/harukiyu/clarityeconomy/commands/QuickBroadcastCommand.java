@@ -8,6 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
+@SuppressWarnings("null")
 public class QuickBroadcastCommand implements BasicCommand {
 
     private final ClarityEconomy plugin;
@@ -21,9 +22,6 @@ public class QuickBroadcastCommand implements BasicCommand {
     @Override
     public void execute(@NotNull CommandSourceStack stack, @NotNull String[] args) {
         CommandSender sender = stack.getSender();
-        if (sender == null) {
-            return;
-        }
         if (!(sender instanceof Player player)) {
             sender.sendMessage("Only players can use quick broadcast commands.");
             return;

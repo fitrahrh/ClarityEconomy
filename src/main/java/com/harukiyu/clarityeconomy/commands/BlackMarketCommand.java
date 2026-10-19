@@ -7,6 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
+@SuppressWarnings("null")
 public class BlackMarketCommand implements BasicCommand {
 
     private final ClarityEconomy plugin;
@@ -18,9 +19,6 @@ public class BlackMarketCommand implements BasicCommand {
     @Override
     public void execute(@NotNull CommandSourceStack stack, @NotNull String[] args) {
         CommandSender sender = stack.getSender();
-        if (sender == null) {
-            return;
-        }
         if (!(sender instanceof Player player)) {
             sender.sendMessage("Only players can open the Black Market menu.");
             return;

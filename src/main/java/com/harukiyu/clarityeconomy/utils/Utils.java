@@ -12,6 +12,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+@SuppressWarnings("null")
 public final class Utils {
 
     private static final MiniMessage MINI_MESSAGE = MiniMessage.miniMessage();

@@ -11,6 +11,7 @@ import java.time.Duration;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
+@SuppressWarnings("null")
 public class AuctionManager {
 
     private final ClarityEconomy plugin;

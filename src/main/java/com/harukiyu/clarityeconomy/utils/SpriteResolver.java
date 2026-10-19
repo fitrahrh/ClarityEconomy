@@ -18,6 +18,7 @@ import java.util.Set;
  * This natively renders real vanilla 16x16 Minecraft item/block textures in text components
  * and Paper Dialog button labels without needing external custom resource pack setups.
  */
+@SuppressWarnings("null")
 public final class SpriteResolver {
 
     private SpriteResolver() {}

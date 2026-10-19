@@ -3,12 +3,14 @@ prefix: "<gray>[<gold>Ekonomi</gold>]</gray> "
 general:
   btn_confirm: "<green>Konfirmasi</green>"
   btn_cancel: "<red>Batal</red>"
-  btn_back: "<gray>Kembali</gray>"
-  btn_close: "<red>Tutup</red>"
+  btn_back: "<white>Kembali</white>"
+  btn_close: "<white>Tutup</white>"
+  btn_sell_all: "<gold>Jual Semua</gold>"
 
 market:
   btn_buy: "<green>Beli</green>"
   btn_sell: "<gold>Jual</gold>"
+  btn_sell_all: "<gold>Jual Semua</gold>"
   invalid_quantity: "<prefix><red>Jumlah tidak valid! Harus berupa bilangan bulat positif.</red>"
   not_enough_money: "<prefix><red>Uang Anda tidak mencukupi! Dibutuhkan: <yellow>$<cost></yellow>, Saldo: <yellow>$<balance></yellow>.</red>"
   not_enough_items: "<prefix><red>Barang di inventori tidak cukup! Butuh: <yellow><required></yellow>, Dimiliki: <yellow><have></yellow>.</red>"
@@ -98,41 +100,42 @@ dialog:
     btn_cancel: "<white>Batal</white>"
     btn_back: "<white>Kembali</white>"
     btn_close: "<white>Tutup</white>"
+    btn_sell_all: "<white>Jual Semua</white>"
   market:
     title: "<white>Pasar</white>"
-    body: "<white>Katalog Pasar Server:</white>\n\n<gray>Selamat datang di pasar resmi server. Pilih kategori di bawah untuk menjelajahi barang dagangan.</gray>\n\n<white>Informasi Akun:</white>\n<gray>• Saldo Anda Saat Ini:</gray> <white>$<balance></white>"
+    body: "<white>Katalog Pasar Server:</white>\n\n<gray>Selamat datang di pasar resmi server. Pilih kategori di bawah untuk menjelajahi barang dagangan.</gray>\n\n<white>Informasi Akun:</white>\n<gray>Saldo Anda Saat Ini:</gray> <white>$<balance></white>"
   category:
     title: "<white><category></white>"
-    body: "<white>Kategori: <category></white>\n\n<gray>Pilih barang dari katalog untuk melakukan pembelian atau penjualan.</gray>\n\n<white>Informasi Akun:</white>\n<gray>• Saldo Anda Saat Ini:</gray> <white>$<balance></white>"
+    body: "<white>Kategori: <category></white>\n\n<gray>Pilih barang dari katalog untuk melakukan pembelian atau penjualan.</gray>\n\n<white>Informasi Akun:</white>\n<gray>Saldo Anda Saat Ini:</gray> <white>$<balance></white>"
   item_action:
     title: "<white><item></white>"
-    body: "<white>Rincian Barang Dagangan:</white>\n\n<gray>• Nama Barang:</gray> <white><item></white>\n<gray>• Harga Beli:</gray> <white>$<buy_price></white>\n<gray>• Harga Jual:</gray> <white>$<sell_price></white>\n<gray>• Stok di Inventori:</gray> <white><inv_count></white>\n\n<white>Informasi Akun:</white>\n<gray>• Saldo Anda Saat Ini:</gray> <white>$<balance></white>"
+    body: "<white>Rincian Barang Dagangan:</white>\n\n<gray>Nama Barang:</gray> <white><item></white>\n<gray>Harga Beli:</gray> <white>$<buy_price></white>\n<gray>Harga Jual:</gray> <white>$<sell_price></white>\n<gray>Stok di Inventori:</gray> <white><inv_count></white>\n\n<white>Informasi Akun:</white>\n<gray>Saldo Anda Saat Ini:</gray> <white>$<balance></white>"
   buy_input:
     title: "<white>Beli <item></white>"
-    body: "<white>Pembelian Barang:</white>\n\n<gray>Masukkan jumlah <white><item></white> yang ingin Anda beli.</gray>\n<gray>• Harga Satuan:</gray> <white>$<unit_price></white>\n<gray>• Saldo Anda:</gray> <white>$<balance></white>"
+    body: "<white>Pembelian Barang:</white>\n\n<gray>Masukkan jumlah <white><item></white> yang ingin Anda beli.</gray>\n<gray>Harga Satuan:</gray> <white>$<unit_price></white>\n<gray>Saldo Anda:</gray> <white>$<balance></white>"
   buy_confirm:
     title: "<white>Konfirmasi Pembelian</white>"
-    body: "<white>Konfirmasi Transaksi Beli:</white>\n\n<gray>Apakah Anda yakin ingin membeli <white><amount>x <item></white> seharga <white>$<cost></white>?</gray>\n\n<gray>• Saldo Anda Setelah Beli:</gray> <white>$<balance></white>"
+    body: "<white>Konfirmasi Transaksi Beli:</white>\n\n<gray>Apakah Anda yakin ingin membeli <white><amount>x <item></white> seharga <white>$<cost></white>?</gray>\n\n<gray>Saldo Anda Setelah Beli:</gray> <white>$<balance></white>"
   sell_input:
     title: "<white>Jual <item></white>"
-    body: "<white>Penjualan Barang:</white>\n\n<gray>Masukkan jumlah <white><item></white> yang ingin Anda jual.</gray>\n<gray>• Harga per Satuan:</gray> <white>$<unit_payout></white>\n<gray>• Stok di Inventori:</gray> <white><inv_count></white>"
+    body: "<white>Penjualan Barang:</white>\n\n<gray>Masukkan jumlah <white><item></white> yang ingin Anda jual.</gray>\n<gray>Harga per Satuan:</gray> <white>$<unit_payout></white>\n<gray>Stok di Inventori:</gray> <white><inv_count></white>"
   sell_confirm:
     title: "<white>Konfirmasi Penjualan</white>"
-    body: "<white>Konfirmasi Transaksi Jual:</white>\n\n<gray>Apakah Anda yakin ingin menjual <white><amount>x <item></white> seharga <white>$<payout></white>?</gray>\n\n<gray>• Saldo Anda Setelah Jual:</gray> <white>$<balance></white>"
+    body: "<white>Konfirmasi Transaksi Jual:</white>\n\n<gray>Apakah Anda yakin ingin menjual <white><amount>x <item></white> seharga <white>$<payout></white>?</gray>\n\n<gray>Saldo Anda Setelah Jual:</gray> <white>$<balance></white>"
   input:
     quantity_label: "<gray>Jumlah:</gray>"
     promo_label: "<gray>Pesan iklan promosi:</gray>"
   blackmarket:
     title: "<white>Pasar Gelap</white>"
     closed_title: "<white>Pasar Gelap Tutup</white>"
-    body: "<white>Pasar Gelap Rahasia:</white>\n\n<gray>Semua barang selundupan mendapatkan diskon khusus <white><discount></white>!</gray>\n<gray>• Sisa Waktu Buka Sesi Ini:</gray> <white><remaining></white>\n<gray>• Saldo Anda Saat Ini:</gray> <white>$<balance></white>\n\n<gray>Catatan: Karakter Anda tidak dapat bergerak selama proses transaksi di pasar gelap.</gray>"
+    body: "<white>Pasar Gelap Rahasia:</white>\n\n<gray>Semua barang selundupan mendapatkan diskon khusus <white><discount></white>!</gray>\n<gray>Sisa Waktu Buka Sesi Ini:</gray> <white><remaining></white>\n<gray>Saldo Anda Saat Ini:</gray> <white>$<balance></white>\n\n<gray>Catatan: Karakter Anda tidak dapat bergerak selama proses transaksi di pasar gelap.</gray>"
   promosi:
     title: "<white>Promosi</white>"
-    body: "<white>Sewa Slot Promosi Server:</white>\n\n<gray>Siarkan iklan Anda secara berkala ke seluruh pemain server.</gray>\n<gray>• Biaya Sewa:</gray> <white>$<cost></white>\n<gray>• Durasi Penayangan:</gray> <white><duration> menit</white>\n<gray>• Slot Aktif:</gray> <white><active_count>/<max_slots></white>\n<gray>• Saldo Anda:</gray> <white>$<balance></white>"
+    body: "<white>Sewa Slot Promosi Server:</white>\n\n<gray>Siarkan iklan Anda secara berkala ke seluruh pemain server.</gray>\n<gray>Biaya Sewa:</gray> <white>$<cost></white>\n<gray>Durasi Penayangan:</gray> <white><duration> menit</white>\n<gray>Slot Aktif:</gray> <white><active_count>/<max_slots></white>\n<gray>Saldo Anda:</gray> <white>$<balance></white>"
   jobs:
     title: "<white>Pekerjaan</white>"
     no_job_title: "<white>Pekerjaan</white>"
-    no_job_body: "<white>Status Profesi: Belum Memilih Pekerjaan</white>\n\n<gray>Sistem pekerjaan memberikan penghasilan uang dan Job EXP setiap kali Anda beraktivitas di server.</gray>\n\n<white>Keuntungan & Fitur Pekerjaan:</white>\n<gray>• 10 Pilihan Profesi unik sesuai gaya bermain Anda.</gray>\n<gray>• Buff Pasif Permanen saat mencapai Level 50.</gray>\n<gray>• Aura Buff yang otomatis dipancarkan ke rekan sekitar (10 blok).</gray>\n<gray>• Akses ke berbagai Quest Pekerjaan untuk bonus hadiah melimpah.</gray>\n\n<gray>Silakan pilih profesi pertama Anda atau pelajari panduan melalui tombol di bawah.</gray>"
+    no_job_body: "<white>Status Profesi: Belum Memilih Pekerjaan</white>\n\n<gray>Sistem pekerjaan memberikan penghasilan uang dan Job EXP setiap kali Anda beraktivitas di server.</gray>\n\n<white>Keuntungan & Fitur Pekerjaan:</white>\n<gray>10 Pilihan Profesi unik sesuai gaya bermain Anda.</gray>\n<gray>Buff Pasif Permanen saat mencapai Level 50.</gray>\n<gray>Aura Buff yang otomatis dipancarkan ke rekan sekitar (10 blok).</gray>\n<gray>Akses ke berbagai Quest Pekerjaan untuk bonus hadiah melimpah.</gray>\n\n<gray>Silakan pilih profesi pertama Anda atau pelajari panduan melalui tombol di bawah.</gray>"
     body: "<white>Informasi Profesi Anda:</white>\n\n<white>Profesi:</white> <white><job></white>\n<white>Level:</white> <white><level></white><gray>/<max_level></gray> | <white>EXP:</white> <white><exp></white><gray>/<req_exp></gray> <gray>(<exp_percent>%)</gray>\n\n<gray>Buka Detail Pekerjaan untuk melihat rincian progres, buff, quest profesi, atau mengundurkan diri dari pekerjaan.</gray>"
     select_title: "<white>Pilih Profesi</white>"
     select_body: "<gray>Pilih salah satu dari 10 profesi di bawah ini untuk melihat detail dan memilihnya.</gray>"
@@ -145,16 +148,16 @@ dialog:
     btn_quests: "<white>Quest Pekerjaan</white>"
     btn_resign: "<white>Keluar dari Pekerjaan</white>"
     active_title: "<white>Detail Pekerjaan: <job></white>"
-    active_body: "<white>Rincian Profesi: <job></white>\n\n<white>Perkembangan Level:</white>\n<gray>• Level Saat Ini:</gray> <white><level></white><gray>/<max_level></gray>\n<gray>• Total EXP:</gray> <white><exp></white><gray>/<req_exp></gray> <gray>(<exp_percent>%)</gray>\n\n<white>Aktivitas Penghasil EXP & Uang:</white>\n<gray><description></gray>\n\n<white>Hadiah Master Level 50:</white>\n<gray>• Buff Karakter:</gray> <white><self_buff></white>\n<gray>• Buff Aura Sekitar (10 blok):</gray> <white><aura_buff></white>\n\n<gray>Selesaikan Quest Pekerjaan untuk mempercepat perolehan Job EXP.</gray>"
+    active_body: "<white>Rincian Profesi: <job></white>\n\n<white>Perkembangan Level:</white>\n<gray>Level Saat Ini:</gray> <white><level></white><gray>/<max_level></gray>\n<gray>Total EXP:</gray> <white><exp></white><gray>/<req_exp></gray> <gray>(<exp_percent>%)</gray>\n\n<white>Aktivitas Penghasil EXP & Uang:</white>\n<gray><description></gray>\n\n<white>Hadiah Master Level 50:</white>\n<gray>Buff Karakter:</gray> <white><self_buff></white>\n<gray>Buff Aura Sekitar (10 blok):</gray> <white><aura_buff></white>\n\n<gray>Selesaikan Quest Pekerjaan untuk mempercepat perolehan Job EXP.</gray>"
     quests_title: "<white>Quest Pekerjaan: <job></white>"
-    quests_body: "<white>Pusat Misi & Quest: <job></white>\n\n<gray>Selesaikan misi harian dan tantangan khusus profesi ini untuk mendapatkan bonus koin besar dan lonjakan Job EXP.</gray>\n\n<white>Kategori Quest Tersedia:</white>\n<gray>• Misi Harian: Tugas rutin berhadiah koin & EXP harian.</gray>\n<gray>• Tantangan Spesialis: Tantangan berskala besar sesuai profesi.</gray>\n<gray>• Milestone Tingkat: Misi pencapaian kenaikan level tier.</gray>\n\n<gray>Catatan: Fitur quest terhubung langsung dengan sistem ClarityQuest.</gray>"
+    quests_body: "<white>Pusat Misi & Quest: <job></white>\n\n<gray>Selesaikan misi harian dan tantangan khusus profesi ini untuk mendapatkan bonus koin besar dan lonjakan Job EXP.</gray>\n\n<white>Kategori Quest Tersedia:</white>\n<gray>Misi Harian: Tugas rutin berhadiah koin & EXP harian.</gray>\n<gray>Tantangan Spesialis: Tantangan berskala besar sesuai profesi.</gray>\n<gray>Milestone Tingkat: Misi pencapaian kenaikan level tier.</gray>\n\n<gray>Catatan: Fitur quest terhubung langsung dengan sistem ClarityQuest.</gray>"
     btn_quest_daily: "<white>Misi Harian</white>"
     btn_quest_specialist: "<white>Tantangan Spesialis</white>"
     btn_quest_milestone: "<white>Milestone Tingkat</white>"
     quest_detail_title: "<white>Info Quest: <category></white>"
     quest_detail_body: "<white>Kategori Quest: <category></white>\n\n<white>Status:</white> <white>Tersedia</white>\n<gray>Target: Selesaikan aktivitas profesi <white><job></white> untuk menyelesaikan target quest ini.</gray>\n<gray>Hadiah: Koin Vault & Job EXP berlipat ganda.</gray>\n\n<gray>Catatan: Integrasi penuh sedang disiapkan bersama plugin ClarityQuest.</gray>"
     resign_title: "<white>Keluar dari Pekerjaan</white>"
-    resign_body: "<white>Pengunduran Diri dari Profesi <job>:</white>\n\n<gray>Apakah Anda yakin ingin keluar dari profesi <white><job></white>?</gray>\n\n<white>Rincian Biaya & Konsekuensi:</white>\n<gray>• Biaya Pengunduran Diri:</gray> <white>$<cost></white>\n<gray>• Saldo Anda Saat Ini:</gray> <white>$<balance></white>\n<gray>• Level profesi ini akan direset kembali ke Level 1.</gray>\n\n<gray>Setelah keluar, Anda dapat langsung memilih profesi baru di menu pekerjaan.</gray>"
+    resign_body: "<white>Pengunduran Diri dari Profesi <job>:</white>\n\n<gray>Apakah Anda yakin ingin keluar dari profesi <white><job></white>?</gray>\n\n<white>Rincian Biaya & Konsekuensi:</white>\n<gray>Biaya Pengunduran Diri:</gray> <white>$<cost></white>\n<gray>Saldo Anda Saat Ini:</gray> <white>$<balance></white>\n<gray>Level profesi ini akan direset kembali ke Level 1.</gray>\n\n<gray>Setelah keluar, Anda dapat langsung memilih profesi baru di menu pekerjaan.</gray>"
     btn_confirm_resign: "<white>Konfirmasi Keluar</white>"
   jobs_guide:
     title: "<white>Panduan Pekerjaan</white>"
@@ -164,7 +167,7 @@ dialog:
     list_body: "<gray>Pilih profesi di bawah untuk melihat rincian aktivitas dan buff yang diberikan:</gray>"
   job_details:
     title: "<white><job></white>"
-    body: "<white>Profesi: <job></white>\n<gray><description></gray>\n\n<white>Hadiah Level Maksimal (Lv 50):</white>\n<gray>• Buff Diri Sendiri:</gray> <white><self_buff></white>\n<gray>• Buff Aura Pemain Sekitar:</gray> <white><aura_buff></white>\n\n<white>Biaya Pemilihan / Penggantian:</white>\n<gray>• Biaya Reset:</gray> <white>$<cost></white>\n<gray>• Saldo Anda:</gray> <white>$<balance></white>\n\n<gray>Catatan: Mengganti pekerjaan akan mereset level pekerjaan ke 1.</gray>"
+    body: "<white>Profesi: <job></white>\n<gray><description></gray>\n\n<white>Hadiah Level Maksimal (Lv 50):</white>\n<gray>Buff Diri Sendiri:</gray> <white><self_buff></white>\n<gray>Buff Aura Pemain Sekitar:</gray> <white><aura_buff></white>\n\n<white>Biaya Pemilihan / Penggantian:</white>\n<gray>Biaya Reset:</gray> <white>$<cost></white>\n<gray>Saldo Anda:</gray> <white>$<balance></white>\n\n<gray>Catatan: Mengganti pekerjaan akan mereset level pekerjaan ke 1.</gray>"
   job_confirm:
     title: "<white>Konfirmasi Ganti Pekerjaan</white>"
     body: "<white>Peringatan Penggantian Profesi:</white>\n\n<gray>Mengganti pekerjaan ke <white><job></white> akan dikenakan biaya <white>$<cost></white> dan mereset level Anda ke 1.</gray>\n\n<gray>Apakah Anda yakin ingin melanjutkan?</gray>"

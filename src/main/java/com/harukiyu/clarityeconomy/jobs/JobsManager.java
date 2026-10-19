@@ -16,6 +16,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.UUID;
 
+@SuppressWarnings("null")
 public class JobsManager {
 
     private final ClarityEconomy plugin;

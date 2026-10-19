@@ -28,6 +28,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
+@SuppressWarnings("null")
 public class ClarityEconomy extends JavaPlugin {
 
     private static ClarityEconomy instance;

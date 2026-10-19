@@ -18,6 +18,7 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 
+@SuppressWarnings("null")
 public class JobStorageManager {
 
     private final ClarityEconomy plugin;

@@ -11,7 +11,6 @@ import com.harukiyu.clarityeconomy.market.ShopCategory;
 import com.harukiyu.clarityeconomy.market.ShopItem;
 import com.harukiyu.clarityeconomy.utils.SpriteResolver;
 import com.harukiyu.clarityeconomy.utils.Utils;
-import org.bukkit.Material;
 import io.papermc.paper.dialog.Dialog;
 import io.papermc.paper.registry.data.dialog.ActionButton;
 import io.papermc.paper.registry.data.dialog.DialogBase;
@@ -31,6 +30,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("null")
 public class EconomyDialogManager {
 
     public static final ClickCallback.Options CALLBACK_OPTIONS = ClickCallback.Options.builder()
@@ -73,8 +73,7 @@ public class EconomyDialogManager {
                     .build());
         }
 
-        ActionButton exitBtn = ActionButton.builder(
-                SpriteResolver.createButtonLabel(Material.BARRIER, LanguageHook.getComponent("general.btn_close", player)))
+        ActionButton exitBtn = ActionButton.builder(LanguageHook.getComponent("general.btn_close", player))
                 .action(DialogAction.customClick((view, audience) -> {
                     if (audience instanceof Player p) p.closeDialog();
                 }, CALLBACK_OPTIONS))
@@ -123,8 +122,7 @@ public class EconomyDialogManager {
                     .build());
         }
 
-        ActionButton backBtn = ActionButton.builder(
-                SpriteResolver.createButtonLabel(Material.BARRIER, LanguageHook.getComponent("general.btn_back", player)))
+        ActionButton backBtn = ActionButton.builder(LanguageHook.getComponent("general.btn_back", player))
                 .action(DialogAction.customClick((view, audience) -> {
                     if (audience instanceof Player p) openMarketMenu(p);
                 }, CALLBACK_OPTIONS))
@@ -162,8 +160,7 @@ public class EconomyDialogManager {
         List<ActionButton> buttons = new ArrayList<>();
 
         if (item.canBuy()) {
-            buttons.add(ActionButton.builder(
-                    SpriteResolver.createButtonLabel(Material.EMERALD, LanguageHook.getComponent("market.btn_buy", player)))
+            buttons.add(ActionButton.builder(LanguageHook.getComponent("market.btn_buy", player))
                     .tooltip(Component.text("Purchase " + itemName))
                     .action(DialogAction.customClick((view, audience) -> {
                         if (audience instanceof Player p) {
@@ -174,8 +171,7 @@ public class EconomyDialogManager {
         }
 
         if (item.canSell()) {
-            buttons.add(ActionButton.builder(
-                    SpriteResolver.createButtonLabel(Material.GOLD_INGOT, LanguageHook.getComponent("market.btn_sell", player)))
+            buttons.add(ActionButton.builder(LanguageHook.getComponent("market.btn_sell", player))
                     .tooltip(Component.text("Sell " + itemName))
                     .action(DialogAction.customClick((view, audience) -> {
                         if (audience instanceof Player p) {
@@ -185,8 +181,7 @@ public class EconomyDialogManager {
                     .build());
         }
 
-        ActionButton backBtn = ActionButton.builder(
-                SpriteResolver.createButtonLabel(Material.BARRIER, LanguageHook.getComponent("general.btn_back", player)))
+        ActionButton backBtn = ActionButton.builder(LanguageHook.getComponent("general.btn_back", player))
                 .action(DialogAction.customClick((view, audience) -> {
                     if (audience instanceof Player p) openCategoryMenu(p, category);
                 }, CALLBACK_OPTIONS))
@@ -365,6 +360,21 @@ public class EconomyDialogManager {
                 }, CALLBACK_OPTIONS))
                 .build();
 
+        ActionButton sellAllBtn = ActionButton.builder(LanguageHook.getComponent("dialog.general.btn_sell_all", player))
+                .action(DialogAction.customClick((view, audience) -> {
+                    if (audience instanceof Player p) {
+                        int count = Utils.countItem(p, item.getMaterial());
+                        if (count <= 0) {
+                            LanguageHook.sendMessage(p, "market.not_enough_items",
+                                    Placeholder.unparsed("required", "1"),
+                                    Placeholder.unparsed("have", "0"));
+                            return;
+                        }
+                        openSellConfirmDialog(p, category, item, count, unitPrice);
+                    }
+                }, CALLBACK_OPTIONS))
+                .build();
+
         ActionButton cancelBtn = ActionButton.builder(LanguageHook.getComponent("general.btn_cancel", player))
                 .action(DialogAction.customClick((view, audience) -> {
                     if (audience instanceof Player p) openItemActionMenu(p, category, item);
@@ -377,7 +387,7 @@ public class EconomyDialogManager {
                         .inputs(List.of(quantityInput))
                         .canCloseWithEscape(true)
                         .build())
-                .type(DialogType.confirmation(confirmBtn, cancelBtn))
+                .type(DialogType.multiAction(List.of(confirmBtn, sellAllBtn), cancelBtn, 2))
         );
 
         player.showDialog(dialog);
@@ -495,8 +505,7 @@ public class EconomyDialogManager {
                     .build());
         }
 
-        ActionButton exitBtn = ActionButton.builder(
-                SpriteResolver.createButtonLabel(Material.BARRIER, LanguageHook.getComponent("general.btn_close", player)))
+        ActionButton exitBtn = ActionButton.builder(LanguageHook.getComponent("general.btn_close", player))
                 .action(DialogAction.customClick((view, audience) -> {
                     if (audience instanceof Player p) {
                         bm.setFrozen(p, false);
@@ -671,8 +680,7 @@ public class EconomyDialogManager {
                     .build());
         }
 
-        ActionButton backBtn = ActionButton.builder(
-                SpriteResolver.createButtonLabel(Material.BARRIER, LanguageHook.getComponent("general.btn_back", player)))
+        ActionButton backBtn = ActionButton.builder(LanguageHook.getComponent("general.btn_back", player))
                 .action(DialogAction.customClick((view, audience) -> {
                     if (audience instanceof Player p) openJobsMenu(p);
                 }, CALLBACK_OPTIONS))
@@ -1091,8 +1099,7 @@ public class EconomyDialogManager {
                     .build());
         }
 
-        ActionButton backBtn = ActionButton.builder(
-                SpriteResolver.createButtonLabel(Material.BARRIER, LanguageHook.getComponent("general.btn_back", player)))
+        ActionButton backBtn = ActionButton.builder(LanguageHook.getComponent("general.btn_back", player))
                 .action(DialogAction.customClick((view, audience) -> {
                     if (audience instanceof Player p) openJobsGuideMenu(p);
                 }, CALLBACK_OPTIONS))

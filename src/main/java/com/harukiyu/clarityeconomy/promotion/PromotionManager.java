@@ -29,6 +29,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
+@SuppressWarnings("null")
 public class PromotionManager {
 
     public enum QuickType {

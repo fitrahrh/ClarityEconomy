@@ -9,6 +9,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.text.DecimalFormat;
 
+@SuppressWarnings("null")
 public final class VaultHook {
 
     private static Economy economy = null;

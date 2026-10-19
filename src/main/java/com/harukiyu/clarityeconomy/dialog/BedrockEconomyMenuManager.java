@@ -24,6 +24,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("null")
 public class BedrockEconomyMenuManager {
 
     private static final PlainTextComponentSerializer PLAIN = PlainTextComponentSerializer.plainText();
@@ -246,17 +247,30 @@ public class BedrockEconomyMenuManager {
         CustomForm form = CustomForm.builder()
                 .title(text(title))
                 .input("Amount to sell (You have: " + have + " | Unit payout: $" + VaultHook.formatMoney(unitPrice) + "):", String.valueOf(Math.max(1, have)), String.valueOf(Math.max(1, have)))
+                .toggle("Sell All (" + have + ")", false)
                 .validResultHandler(response -> {
-                    String input = response.asInput(0);
+                    boolean sellAll = response.asToggle(1);
                     int amount;
-                    try {
-                        amount = Integer.parseInt(input);
-                        if (amount <= 0) throw new NumberFormatException();
-                    } catch (NumberFormatException e) {
-                        LanguageHook.sendMessage(player, "market.invalid_quantity");
+                    if (sellAll) {
+                        amount = have;
+                    } else {
+                        String input = response.asInput(0);
+                        try {
+                            amount = Integer.parseInt(input);
+                            if (amount <= 0) throw new NumberFormatException();
+                        } catch (NumberFormatException e) {
+                            LanguageHook.sendMessage(player, "market.invalid_quantity");
+                            return;
+                        }
+                    }
+                    if (amount <= 0) {
+                        LanguageHook.sendMessage(player, "market.not_enough_items",
+                                Placeholder.unparsed("required", "1"),
+                                Placeholder.unparsed("have", "0"));
                         return;
                     }
-                    runSync(() -> openSellConfirmDialog(player, category, item, amount, unitPrice));
+                    final int finalAmount = amount;
+                    runSync(() -> openSellConfirmDialog(player, category, item, finalAmount, unitPrice));
                 })
                 .build();
 

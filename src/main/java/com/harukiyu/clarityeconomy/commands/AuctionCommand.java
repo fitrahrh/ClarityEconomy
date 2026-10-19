@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import java.util.List;
 
+@SuppressWarnings("null")
 public class AuctionCommand implements BasicCommand {
 
     private final ClarityEconomy plugin;
@@ -21,9 +22,6 @@ public class AuctionCommand implements BasicCommand {
     @Override
     public void execute(@NotNull CommandSourceStack stack, @NotNull String[] args) {
         CommandSender sender = stack.getSender();
-        if (sender == null) {
-            return;
-        }
         if (!(sender instanceof Player player)) {
             sender.sendMessage("Only players can use /auction.");
             return;

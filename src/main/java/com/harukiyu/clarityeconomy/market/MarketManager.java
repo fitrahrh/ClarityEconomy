@@ -20,6 +20,7 @@ import java.io.File;
 import java.util.*;
 import java.util.logging.Level;
 
+@SuppressWarnings("null")
 public class MarketManager {
 
     private final ClarityEconomy plugin;
